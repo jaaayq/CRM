@@ -13,11 +13,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+
+Route::prefix('createactivity')->group(function()
+{
+    Route::get('/create', function () {
+        return view('create');
+    })->name('create');
+}
+);
+
+Route::prefix('viewactivity')->group(function()
+{
+    Route::get('/view', function () {
+        return view('view');
+    })->name('view');
+}
+);

@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="font-semibold text-xl text-white-800 leading-light">
             {{ __('Profile') }}
         </h2>
     </x-slot>
@@ -33,11 +33,13 @@
                 @livewire('profile.logout-other-browser-sessions-form')
             </div>
 
-            <x-jet-section-border />
+            @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
+                <x-jet-section-border />
 
-            <div class="mt-10 sm:mt-0">
-                @livewire('profile.delete-user-form')
-            </div>
+                <div class="mt-10 sm:mt-0">
+                    @livewire('profile.delete-user-form')
+                </div>
+            @endif
         </div>
     </div>
 </x-app-layout>
