@@ -5,45 +5,43 @@
         <!-- /.content-header -->
 
         <!-- Main content -->
-        <section class="content">
+        <section class="col-md-12">
             <div class="card card-warning">
                 <div class="card-header">
                 <h3 class="card-title">CREATE ACIVITY</h3>
                 </div>
                 <div class="card-body">
-                    <form action="">
-                        <div class="row">
-                        <div class="col-sm-6">
-                            <!-- text input -->
-                            <div class="form-group">
-                            <div class="row">
-                            <div class="col-sm-6">
+                    <form method="POST" action="{{ route('store.activity') }}" enctype="multipart/form-data">
+
+                        <div class="form-row">
+                        <div class="form-group col-sm-6">
                             <label>Name of Activity</label>
-                            <input type="text" class="form-control" placeholder="Name of Activity">
+                            <input type="text" class="form-control" placeholder="Name Activity">
+                            </div>
 
                             <div class="form-group">
                                 <label>Date of Activity:</label>
                                   <div class="input-group date" id="reservationdate" data-target-input="nearest">
                                       <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate"/>
                                       <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
-                                          <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                      <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                       </div>
                                   </div>
                             </div>
+                        </div>
 
+                        <div class="form-row">
+                            <div class="form-group col-sm-6">
                             <label>Activity Description</label>
-                            <input type="text" class="form-control" placeholder="Activity Description...">
+                            <input type="text" class="form-control" placeholder="Activity Description">
                             <label>Activity Code:</label>
-                            <input type="text" class="form-control" placeholder="Compose Activity Code">
-                             </div>
-                             </div>
-                             <div>
-                                <input class="btn btn-primary" type="submit" value="Submit">
-                             </div>
+                            <input type="text" class="form-control" placeholder="Activity Code">
+                       </div>
+                        </div>
 
-                            </div>
-                            </div>
-                            </div>
+                             <div>
+                                <button class="btn btn-primary" type="submit">SUBMIT</button>
+                             </div>
                         </form>
                         </div>
                         </div>

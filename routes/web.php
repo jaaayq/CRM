@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Http\Controllers\ProfileInformationController;
+use App\Http\Controllers\activityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,10 @@ Route::prefix('createactivity')->group(function()
     Route::get('/create', function () {
         return view('create');
     })->name('create');
+
+Route::get('view',  [activityController::class, 'view'])->name('view.activity');
+Route::get('store',  [activityController::class, 'store'])->name('store.activity');
+
 }
 );
 
@@ -37,9 +42,6 @@ Route::prefix('viewactivity')->group(function()
         return view('view');
     })->name('view');
 
-
-Route::get('view',  [informationController::class, 'view'])->name('view.information');
-Route::get('store',  [informationController::class, 'store'])->name('store.information');
-
-
 });
+
+
