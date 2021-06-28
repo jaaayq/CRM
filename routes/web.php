@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Laravel\Fortify\Http\Controllers\ProfileInformationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,5 +36,10 @@ Route::prefix('viewactivity')->group(function()
     Route::get('/view', function () {
         return view('view');
     })->name('view');
-}
-);
+
+
+Route::get('view',  [informationController::class, 'view'])->name('view.information');
+Route::get('store',  [informationController::class, 'store'])->name('store.information');
+
+
+});
