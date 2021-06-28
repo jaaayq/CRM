@@ -12,36 +12,34 @@
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('store.activity') }}" enctype="multipart/form-data">
-
+                        @csrf
                         <div class="form-row">
                         <div class="form-group col-sm-6">
                             <label>Name of Activity</label>
-                            <input type="text" class="form-control" placeholder="Name Activity">
+                            <input type="text" name="activityname"   class="form-control" placeholder="Name Activity">
                             </div>
 
-                            <div class="form-group">
+                          <div class="form-group">
                                 <label>Date of Activity:</label>
                                   <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                      <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate"/>
+                                      <input type="text" name="activitydate" class="form-control datetimepicker-input" data-target="#reservationdate"/>
                                       <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
                                       <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                       </div>
                                   </div>
                             </div>
                         </div>
-
                         <div class="form-row">
                             <div class="form-group col-sm-6">
                             <label>Activity Description</label>
-                            <input type="text" class="form-control" placeholder="Activity Description">
+                            <input type="text" name="activitydescription" class="form-control" placeholder="Activity Description">
                             <label>Activity Code:</label>
-                            <input type="text" class="form-control" placeholder="Activity Code">
-                       </div>
+                            <input type="text" name="activitycode" class="form-control" placeholder="Activity Code">
                         </div>
+                        </div>
+                        <div><button class="btn btn-primary" type="submit">SUBMIT</button></div>
 
-                             <div>
-                                <button class="btn btn-primary" type="submit">SUBMIT</button>
-                             </div>
+
                         </form>
                         </div>
                         </div>

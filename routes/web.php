@@ -31,7 +31,7 @@ Route::prefix('createactivity')->group(function()
     })->name('create');
 
 Route::get('view',  [activityController::class, 'view'])->name('view.activity');
-Route::get('store',  [activityController::class, 'store'])->name('store.activity');
+Route::post('store',  [activityController::class, 'store'])->name('store.activity');
 
 }
 );
@@ -41,6 +41,8 @@ Route::prefix('viewactivity')->group(function()
     Route::get('/view', function () {
         return view('view');
     })->name('view');
+
+    Route::post('store',  [activityController::class, 'store'])->name('store.activity');
 
 });
 
