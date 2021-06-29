@@ -27,8 +27,10 @@
   <link rel="stylesheet" href={{ asset("dist/css/adminlte.min.css") }}>
  <!-- Scripts -->
  <script src="{{ asset('js/app.js') }}" defer></script>
-
-
+ {{-- DATATABLES CSS--}}
+ <link rel="stylesheet" href="http://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+{{--TOASTR--}}
+<link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed ">
 
@@ -42,7 +44,7 @@
 
             <!-- Preloader -->
             <div class="preloader flex-column justify-content-center align-items-center">
-              <img class="animation__wobble" src="dist/img/crm.png" alt="CRMLogo" height="60" width="60">
+              <img class="animation__wobble" src=" {{asset('dist/img/crm.png')}}" alt="CRMLogo" height="60" width="60">
             </div>
 
   <!-- Navbar -->
@@ -143,5 +145,29 @@
 <script src={{ asset('dist/js/demo.js') }}></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src={{ asset('dist/js/pages/dashboard2.js') }}></script>
+<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+<script>
+@if(Session::has('message'))
+    var type = "{{ Session::get('alert-type', 'info') }}";
+    switch(type){
+        case 'info':
+            toastr.info("{{ Session::get('message') }}");
+            break;
+
+        case 'warning':
+            toastr.warning("{{ Session::get('message') }}");
+            break;
+        case 'success':
+            toastr.success("{{ Session::get('message') }}");
+            break;
+
+        case 'error':
+            toastr.error("{{ Session::get('message') }}");
+            break;
+    }
+    @endif
+</script>
+
+
 </body>
 </html>

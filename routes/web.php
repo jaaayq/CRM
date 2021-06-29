@@ -26,24 +26,24 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::prefix('createactivity')->group(function()
 {
-    Route::get('/create', function () {
-        return view('create');
-    })->name('create');
+ //   Route::get('/create', function () {
+   //     return view('create');
+  // })->name('create');
 
-Route::get('view',  [activityController::class, 'view'])->name('view.activity');
-Route::post('store',  [activityController::class, 'store'])->name('store.activity');
-
-}
-);
-
-Route::prefix('viewactivity')->group(function()
-{
-    Route::get('/view', function () {
-        return view('view');
-    })->name('view');
-
-    Route::post('store',  [activityController::class, 'store'])->name('store.activity');
+Route::get('view',  [activityController::class, 'view'])->name('view.createactivity');
+Route::get('create',  [activityController::class, 'create'])->name('create.createactivity');
+Route::post('store',  [activityController::class, 'store'])->name('store.createactivity');
 
 });
+
+//Route::prefix('viewactivity')->group(function()
+//{
+  //  Route::get('/view', function () {
+    //    return view('view');
+    //})->name('view');
+
+  //  Route::post('store',  [activityController::class, 'store'])->name('store.activity');
+
+//});
 
 

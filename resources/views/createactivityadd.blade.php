@@ -11,7 +11,7 @@
                 <h3 class="card-title">CREATE ACIVITY</h3>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('store.activity') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('store.createactivity') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-row">
                         <div class="form-group col-sm-6">

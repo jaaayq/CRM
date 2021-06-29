@@ -8,9 +8,9 @@ use App\Models\activity1;
 class activityController extends Controller
 {
     //
-    public function view(){
+    public function create(){
 
-        return view('createactivity');
+        return view('createactivityadd');
     }
 
     public function store(Request $request)
@@ -22,5 +22,22 @@ class activityController extends Controller
         $data -> ActivityDescription = $request->activitydescription;
         $data -> ActivityCode = $request->activitycode;
         $data->save();
+
+        $notification = array(
+            'message' => 'Activity Inserted Successfully',
+            'alert-type' => 'success'
+        );
+        return back()->with($notification);
+
+
+
     }
+
+    public function view(){
+
+        return view('createactivityview');
+    }
+
+
+
 }
