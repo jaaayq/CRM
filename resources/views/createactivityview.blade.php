@@ -16,7 +16,7 @@
                             <div class="card-header">
                                 <h3>
                                     ACTIVITES
-                                    <a class="btn btn-success float-right btn-sm" href=""><i class="fa fa-list"> CREATE ACTIVITY</i></a>
+                                    <a class="btn btn-success float-right btn-sm" href="/createactivity/create"><i class="fa fa-list"> CREATE ACTIVITY</i></a>
                                 </h3>
                             </div>
 
@@ -33,22 +33,17 @@
                                             <th style="font-size: 12px">Action</th>
                                         </tr>
                                     </thead>
-                                <tr class="">
-                                    <td>asdasd</td>
-                                    <td>asdasd</td>
-                                    <td>asdasd</td>
-                                    <td>asdasd</td>
-                                    <td>asdasd</td>
-                                    <td>asdasd</td>
-                                </tr>
-                                <tr class="">
-                                    <td>asdasd</td>
-                                    <td>asdasd</td>
-                                    <td>asdasd</td>
-                                    <td>asdasd</td>
-                                    <td>asdasd</td>
-                                    <td>asdasd</td>
-                                </tr>
+
+                                    @foreach ($alldata as $key => $data)
+                                    <tr class="">
+                                        <td>{{ $key+1 }}</td>
+                                        <td>{{ $data->ActivityName }}</td>
+                                        <td>{{ $data->ActivityDate }}</td>
+                                        <td>{{ $data->ActivityDescription }}</td>
+                                        <td>{{ $data->ActivityCode }}</td>
+                                        <td>{{ $data->ActivityName }}</td>
+                                    </tr>
+                                    @endforeach
 
                                 </table>
                             </div>

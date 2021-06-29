@@ -35,7 +35,8 @@ class activityController extends Controller
 
     public function view(){
 
-        return view('createactivityview');
+        $alldata = activity1::all();
+        return view('createactivityview', compact('alldata'));
     }
 
 
