@@ -30,9 +30,13 @@ Route::prefix('createactivity')->group(function()
    //     return view('create');
   // })->name('create');
 
+
+//ROUTES FOR CRUD
 Route::get('view',  [activityController::class, 'view'])->name('view.createactivity');
 Route::get('create',  [activityController::class, 'create'])->name('create.createactivity');
 Route::post('store',  [activityController::class, 'store'])->name('store.createactivity');
+Route::get('delete/{id}',  [activityController::class, 'delete'])->name('delete.createactivity');
+Route::get('edit/{id}',  [activityController::class, 'edit'])->name('edit.createactivity');
 
 });
 

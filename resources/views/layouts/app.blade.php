@@ -28,9 +28,12 @@
  <!-- Scripts -->
  <script src="{{ asset('js/app.js') }}" defer></script>
  {{-- DATATABLES CSS--}}
- <link rel="stylesheet" href="http://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+ <link rel="stylesheet" href="{{asset('http://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css')}}">
 {{--TOASTR--}}
-<link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+<link rel="stylesheet" href="{{asset('http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css')}}">
+{{--SWEETALERT2--}}
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed ">
 
@@ -55,7 +58,7 @@
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
               <!-- Brand Logo -->
               <a href="index3.html" class="brand-link">
-                <img src="dist/img/crm.png" alt="CRM Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="{{asset('dist/img/crm.png')}}" alt="CRM Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-heavy">CRM</span>
               </a>
 
@@ -106,21 +109,12 @@
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__wobble" src="dist/img/crm.png" alt="CRMLogo" height="60" width="60">
+    <img class="animation__wobble" src="{{asset('dist/img/crm.png')}}" alt="CRMLogo" height="60" width="60">
   </div>
 
   <!-- Navbar -->
 
   <!-- /.navbar -->
-
-
-
-
-
-
-
-
-
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
@@ -145,6 +139,15 @@
 <script src={{ asset('dist/js/demo.js') }}></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src={{ asset('dist/js/pages/dashboard2.js') }}></script>
+<script src="{{asset('http://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js')}}"></script>
+<script>
+$(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+
+</script>
+
+
 <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 <script>
 @if(Session::has('message'))
@@ -166,6 +169,34 @@
             break;
     }
     @endif
+</script>
+
+{{--SWEET ALERT 2 FUNCTION---}}
+<script type="text/javascript">
+$(function(){
+    $(document).on ('click', '#delete',function(e){
+        e.preventDefault();
+        var link = $(this).attr("href");
+        Swal.fire({
+            title: 'Are you sure you want to delete this activity?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, Delete Activity!'
+        }).then((result) =>  {
+            if (result.value) {
+                window.location.href = link;
+                Swal.fire(
+                    'Deleted',
+                    'You Activity has been deleted.',
+                    'success'
+                )
+            }
+        })
+    });
+});
 </script>
 
 

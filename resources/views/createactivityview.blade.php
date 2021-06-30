@@ -15,8 +15,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3>
-                                    ACTIVITES
-                                    <a class="btn btn-success float-right btn-sm" href="/createactivity/create"><i class="fa fa-list"> CREATE ACTIVITY</i></a>
+                                    <a class="btn btn-success float-right btn-sm" href="{{route('create.createactivity')}}"><i class="fa fa-list"> CREATE ACTIVITY</i></a>
                                 </h3>
                             </div>
 
@@ -41,7 +40,10 @@
                                         <td>{{ $data->ActivityDate }}</td>
                                         <td>{{ $data->ActivityDescription }}</td>
                                         <td>{{ $data->ActivityCode }}</td>
-                                        <td>{{ $data->ActivityName }}</td>
+                                        <td>
+                                        <a title="Edit" class="btn btn-sm btn-primary" href="{{ route('edit.createactivity', $data->id) }}">EDIT</a>
+                                        <a title="Delete" id="delete" class="btn btn-sm btn-danger" href="{{ route('delete.createactivity', $data->id) }}">DELETE</a>
+                                        </td>
                                     </tr>
                                     @endforeach
 

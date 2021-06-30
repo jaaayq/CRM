@@ -13,6 +13,7 @@ class activityController extends Controller
         return view('createactivityadd');
     }
 
+    //FUNCTIONS FOR CREATE AMD STPRE
     public function store(Request $request)
     {
 
@@ -27,18 +28,43 @@ class activityController extends Controller
             'message' => 'Activity Inserted Successfully',
             'alert-type' => 'success'
         );
-        return back()->with($notification);
+        return redirect()->route('view.createactivity')->with($notification);
 
 
 
     }
 
-    public function view(){
+    //FUNCTIONS FOR VIEW
+    public function view()
+    {
 
         $alldata = activity1::all();
         return view('createactivityview', compact('alldata'));
     }
 
+
+//FUNCTIONS FOR DELETE
+    public function delete($id)
+    {
+        activity1::find($id)->delete();
+
+        $notification = array(
+            'message' => 'Activity Deleted Successfully',
+            'alert-type' => 'warning'
+        );
+        return back()->with($notification);
+
+    }
+
+      //FUNCTIONS FOR EDIT
+      public function edit($id)
+      {
+        $editdata = activity1::where('id', $id)->first();
+
+        return view('createactivityadd', compact('editdata'));
+
+
+      }
 
 
 }
