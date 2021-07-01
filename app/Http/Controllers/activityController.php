@@ -13,6 +13,11 @@ class activityController extends Controller
         return view('createactivityadd');
     }
 
+    public function viewjoin(){
+
+        return view('joinactivity');
+    }
+
     //FUNCTIONS FOR CREATE AMD STPRE
     public function store(Request $request)
     {
@@ -63,6 +68,25 @@ class activityController extends Controller
 
         return view('createactivityadd', compact('editdata'));
 
+
+      }
+
+ //FUNCTIONS FOR UPDATE
+      public function update(Request $request,$id)
+      {
+
+        $data = activity1::where('id', $id)->first();
+        $data-> activityname = $request->activityname;
+        $data-> activitydate = $request->activitydate;
+        $data-> activitydescription = $request->activitydescription;
+        $data-> activitycode = $request->activitycode;
+
+       $data->save();
+       $notification = array(
+        'message' => 'Activity Updated Successfully',
+        'alert-type' => 'success'
+    );
+    return back()->with($notification);
 
       }
 

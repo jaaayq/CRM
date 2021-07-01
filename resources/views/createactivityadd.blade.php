@@ -44,7 +44,7 @@
 
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('store.createactivity') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ (@$editdata)?route('update.createactivity', $editdata->id): route('store.createactivity') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-row">
                         <div class="form-group col-sm-6">
@@ -52,10 +52,10 @@
                             <input type="text" name="activityname"  class="form-control" value="{{ (@$editdata->ActivityName) }}" placeholder="Name Activity">
                             </div>
 
-                        <div class="form-group">
+                        <div class="form-group col-sm-6">
                             <label>Date and time:</label>
                          <div class="input-group date" id="reservationdatetime" data-target-input="nearest">
-                            <input type="text" name="activitydate" class="form-control value="{{ (@$editdata->ActivityDate) }}" datetimepicker-input" data-target="#reservationdatetime"/>
+                            <input type="text" name="activitydate" class="form-control" value="{{ (@$editdata->ActivityDate) }}" datetimepicker-input" data-target="#reservationdatetime"/>
                         <div class="input-group-append" data-target="#reservationdatetime" data-toggle="datetimepicker">
                               <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                              </div>
@@ -71,7 +71,7 @@
                             <input type="text" name="activitycode" class="form-control" value="{{ (@$editdata->ActivityCode) }}" placeholder="Activity Code">
                         </div>
                         </div>
-                        <div><button class="btn btn-primary" type="submit">SUBMIT</button></div>
+                        <div><button class="btn btn-primary" id="update" type="submit">{{  (@$editdata)?'Update':'Submit' }}</button></div>
 
 
                         </form>

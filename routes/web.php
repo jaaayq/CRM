@@ -35,19 +35,20 @@ Route::prefix('createactivity')->group(function()
 Route::get('view',  [activityController::class, 'view'])->name('view.createactivity');
 Route::get('create',  [activityController::class, 'create'])->name('create.createactivity');
 Route::post('store',  [activityController::class, 'store'])->name('store.createactivity');
+Route::post('/update/{id}',  [activityController::class, 'update'])->name('update.createactivity');
 Route::get('delete/{id}',  [activityController::class, 'delete'])->name('delete.createactivity');
 Route::get('edit/{id}',  [activityController::class, 'edit'])->name('edit.createactivity');
 
+
+
+
 });
 
-//Route::prefix('viewactivity')->group(function()
-//{
-  //  Route::get('/view', function () {
-    //    return view('view');
-    //})->name('view');
 
-  //  Route::post('store',  [activityController::class, 'store'])->name('store.activity');
+Route::prefix('joinactivity')->group(function()
+{
+    Route::get('viewjoin',  [activityController::class, 'viewjoin'])->name('viewjoin.joinactivity');
 
-//});
+});
 
 
