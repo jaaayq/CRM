@@ -13,7 +13,7 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <form >
+                <form class="center">
                     <div class="form-row">
                     <div class="form-group col-sm-6">
                         <label>Name of Company</label>
@@ -306,6 +306,23 @@
                                     </table>
 
                                 </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-sm-3">
+                                       <label>7. Give at least three words that best describe your experience with the services availed:</label>
+                                       <label>1.)<input type="text" class="form-control" placeholder="Enter ..."></label>
+                                       <label>2.)<input type="text" class="form-control" placeholder="Enter ..."></label>
+                                       <label>3.)<input type="text" class="form-control" placeholder="Enter ..."></label>
+                                </div>
+
+                                <div class="form-group col-sm-6">
+                                    <label>8. Any other suggestions to improve our service?</label>
+                                        <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                                        <label>Signature:<input type="text" class="form-control" placeholder="Enter ..."></label>
+                                        <label>Designation:<input type="text" class="form-control" placeholder="Enter ..."></label>
+
+                                    </div>
                                 </div>
 
 
