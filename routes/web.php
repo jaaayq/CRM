@@ -52,3 +52,8 @@ Route::prefix('joinactivity')->group(function()
 });
 
 
+Route::prefix('joinactivitytest')->group(function()
+{
+    Route::get('viewjointest',  [activityController::class, 'viewjointest'])->name('viewjointest.joinactivitytest');
+
+});

@@ -18,6 +18,12 @@ class activityController extends Controller
         return view('joinactivity');
     }
 
+
+    public function viewjointest(){
+
+        return view('joinactivitytest');
+    }
+
     //FUNCTIONS FOR CREATE AMD STPRE
     public function store(Request $request)
     {
