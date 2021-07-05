@@ -6,6 +6,12 @@
 
         <!-- Main content -->
 
+        @php
+        $prefix = Request::route()->getPrefix();
+        $route= Route::current()->getName();
+
+
+          @endphp
         <section class="col-md-12">
             <div class="card card-warning">
                 <div class="card-header">
@@ -15,11 +21,11 @@
                 </div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ (@$editdata)?route('update.createactivity', $editdata->id): route('store.createactivity') }}" enctype="multipart/form-data">
+                    <form>
                             <label>ENTER ACTIVITY CODE:</label>
-                            <input id="authenticationcode" class="form-control" type="email" name="authenticationcode" :value="old('authenticationcode')" required autofocus />
+                            <input id="authenticationcode" class="form-control"  type="email" name="authenticationcode" :value="old('authenticationcode')" required  />
                             <div>
-                                <button class="btn btn-primary" id="update" type="submit">ENTER ACTIVITY</button>
+                                <a class="btn btn-primary" href="{{ route('viewjoin.joinactivity') }}" class="nav-link {{ ($route=='viewjoin.joinactivity')?'active':'' }}" role="button">JOIN ACTIVITY</a>
                             </div>
                 </div>
             </form>

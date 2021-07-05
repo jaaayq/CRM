@@ -25,15 +25,8 @@ $route= Route::current()->getName();
 
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
 
-        <div class="nav-item {{ ($prefix=='joinactivity')?'menu-open':''}}">
-          <a href="{{ route('viewjoin.joinactivity') }}" class="nav-link {{ ($route=='viewjoin.joinactivity')?'active':'' }}">JOIN ACTIVITY</a>
-        </div>
-      </div>
-
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-
         <div class="nav-item {{ ($prefix=='joinactivitytest')?'menu-open':''}}">
-          <a href="{{ route('viewjointest.joinactivitytest') }}" class="nav-link {{ ($route=='viewjointest.joinactivitytest')?'active':'' }}">JOIN ACTIVITY TEST</a>
+          <a href="{{ route('viewjointest.joinactivitytest') }}" class="nav-link {{ ($route=='viewjointest.joinactivitytest')?'active':'' }}">JOIN ACTIVITY </a>
         </div>
       </div>
       <!-- SidebarSearch Form -->
