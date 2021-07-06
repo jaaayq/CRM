@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Requests\StoreTaskRequest;
+use App\Http\Requests\UpdateTaskRequest;
+use App\Models\Task;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
@@ -26,7 +28,7 @@ class TaskController extends Controller
      */
     public function create()
     {
-        return view('task.create');
+        return view('tasks.create');
     }
 
     /**
@@ -37,7 +39,7 @@ class TaskController extends Controller
     public function store(StoreTaskRequest $request)
     {
         Task::create($request->validated());
-        return redirect()->route('task.index');
+        return redirect()->route('tasks.index');
     }
 
     /**
@@ -48,7 +50,7 @@ class TaskController extends Controller
      */
     public function show(Task $task)
     {
-        return view('tasks.show', compact('tasks'));
+        return view('tasks.show', compact('task'));
     }
 
     /**
@@ -59,7 +61,7 @@ class TaskController extends Controller
      */
     public function edit(Task $task)
     {
-        return view('tasks.edit', compact('tasks'));
+        return view('tasks.edit', compact('task'));
     }
 
     /**
@@ -74,7 +76,7 @@ class TaskController extends Controller
 
         $task->update($request->validated());
 
-        return redirect()->route('task.index');
+        return redirect()->route('tasks.index');
 
 
     }
@@ -90,7 +92,7 @@ class TaskController extends Controller
 
      $task->delete();
 
-     return redirect()->route('task.index');
+     return redirect()->route('tasks.index');
         //
     }
 }
