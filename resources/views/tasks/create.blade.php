@@ -1,9 +1,9 @@
 <x-app-layout>
-    <x-slot name="slot">
+    <x-slot name="header">
         <h2 class="font-semibold text-xl text-White-800 leading-tight">
             Create Task
         </h2>
-
+    </x-slot>
 
     <div>
         <div class="max-w-4xl mx-auto py-10 sm:px-6 lg:px-8">
@@ -30,5 +30,5 @@
             </div>
         </div>
     </div>
-</x-slot>
+
 </x-app-layout>

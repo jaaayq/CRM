@@ -1,11 +1,11 @@
 <x-app-layout>
-    <x-slot name="slot">
+    <x-slot name="header">
 
 
           <h2 class="font-semibold text-xl text-white-800 leading-tight">
             {{_('Tasks List') }}
         </h2>
-
+    </x-slot>
         <div>
             <div class="max-w-6xl mx-auto py-10 sm:px-6 lg:px-8">
                 <div class="block mb-8">
@@ -61,7 +61,7 @@
             </div>
         </div>
       <!-- Main Footer -->
-    </x-slot>
+
 
 </x-app-layout>
 
