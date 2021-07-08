@@ -19,14 +19,16 @@ $route= Route::current()->getName();
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
 
         <div class="info">
-          <a href="#" class="d-block">{{ Auth::user()->name}}</a>
+
+          <a href="#" class="d-block"><i class="fas fa-user">{{ Auth::user()->name}}</i></a>
+
         </div>
       </div>
 
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
 
         <div class="nav-item {{ ($prefix=='joinactivitytest')?'menu-open':''}}">
-          <a href="{{ route('viewjointest.joinactivitytest') }}" class="nav-link {{ ($route=='viewjointest.joinactivitytest')?'active':'' }}">JOIN ACTIVITY </a>
+          <a href="{{ route('viewjointest.joinactivitytest') }}" class="nav-link {{ ($route=='viewjointest.joinactivitytest')?'active':'' }}"> <i class="fas fa-sign-in-alt">JOIN ACTIVITY </i> </a>
         </div>
       </div>
       <!-- SidebarSearch Form -->
@@ -39,16 +41,20 @@ $route= Route::current()->getName();
                with font-awesome or any other icon font library -->
           <li class="nav-item">
             <a href="{{ route('dashboard') }}" class="nav-link {{ ($route=='dashboard')?'active':'' }}">
+                <i class="fas fa-columns">
               <p>
                 Dashboard
               </p>
+                </i>
             </a>
 
           </li>
           <li class="nav-item {{ ($prefix=='createactivity')?'menu-open':''}}">
             <a href="{{ route('view.createactivity') }}" class="nav-link {{ ($route=='view.createactivity')?'active':'' }}">
               <p>
+                <i class="fas fa-plus-circle">
                 Create Activity
+                </i>
               </p>
             </a>
           </li>
