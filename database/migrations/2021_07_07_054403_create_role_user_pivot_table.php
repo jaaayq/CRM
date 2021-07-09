@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateRoleUserPivotTable extends Migration
 {
+
     public function up()
     {
         Schema::create('role_user', function (Blueprint $table) {
@@ -18,4 +19,6 @@ class CreateRoleUserPivotTable extends Migration
     {
         Schema::dropIfExists('role_user');
     }
+
 }
+

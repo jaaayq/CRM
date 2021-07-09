@@ -152,19 +152,19 @@
                             <tr>
                                 <th style="font-size: 15px">Timelessness on the conduct of the activity as indicated
                                 in the program (time started, time allotted per topic, time ended)</th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r1" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary2" name="r2" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary3" name="r3" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary4" name="r4" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary5" name="r5" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="timelessness101" name="t1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="timelessness102" name="t1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="timelessness103" name="t1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="timelessness104" name="t1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="timelessness105" name="t1" ></th>
                             </tr>
                             <tr>
                                 <th style="font-size: 15px">Timelessness on the delivery of service,per agreed terms</th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary6" name="r6" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary7" name="r7" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary8" name="r8" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary9" name="r9" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary10" name="r10" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="timelessness201" name="t2" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="timelessness202" name="t2" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="timelessness203" name="t2" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="timelessness204" name="t2" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="timelessness205" name="t2" ></th>
                             </tr>
 
                             <tr>
@@ -173,20 +173,20 @@
 
                             <tr>
                                 <th style="font-size: 15px">Courtesy and professionalism of the staff assigned to assist you</th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r1" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r2" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r3" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r4" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r5" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="AOS101" name="AOS1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="AOS102" name="AOS1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="AOS103" name="AOS1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="AOS104" name="AOS1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="AOS105" name="AOS1" ></th>
                             </tr>
                             <tr>
                                 <th style="font-size: 15px">Courtesy and professionalism of the trainers/experts for the
                                      training/service</th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r1" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r2" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r3" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r4" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r5" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="AOS201" name="AOS2" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="AOS202" name="AOS2" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="AOS203" name="AOS2" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="AOS204" name="AOS2" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="AOS205" name="AOS2" ></th>
                             </tr>
 
                             <tr>
@@ -195,43 +195,43 @@
 
                             <tr>
                                 <th style="font-size: 15px">Achievement of training objectives</th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r1" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r2" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r3" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r4" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r5" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="QOS101" name="QOS1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="QOS102" name="QOS1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="QOS103" name="QOS1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="QOS104" name="QOS1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="QOS105" name="QOS1" ></th>
                             </tr>
                             <tr>
                                 <th style="font-size: 15px">Delivery and mastery of the trainers on the topic/s</th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r1" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r2" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r3" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r4" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r5" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="QOS201" name="QOS2" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="QOS202" name="QOS2" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="QOS203" name="QOS2" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="QOS204" name="QOS2" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="QOS205" name="QOS2" ></th>
                             </tr>
                             <tr>
                                 <th style="font-size: 15px">Usefulness of the training materials</th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r1" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r2" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r3" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r4" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r5" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="UTM101" name="UTM1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="UTM102" name="UTM1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="UTM103" name="UTM1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="UTM104" name="UTM1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="UTM105" name="UTM1" ></th>
                             </tr>
                             <tr>
                                 <th style="font-size: 15px">Conductiveness of training venue for teaching</th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r1" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r2" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r3" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r4" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r5" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="CTT101" name="CTT1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="CTT102" name="CTT1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="CTT103" name="CTT1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="CTT104" name="CTT1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="CTT105" name="CTT1" ></th>
                             </tr>
                             <tr>
                                 <th style="font-size: 15px">Relevance of the interventions/assistance provided</th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r1" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r2" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r3" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r4" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r5" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="RIP101" name="RIP1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="RIP102" name="RIP1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="RIP103" name="RIP1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="RIP104" name="RIP1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="RIP105" name="RIP1" ></th>
                             </tr>
 
                             <tr>
@@ -240,11 +240,11 @@
 
                             <tr>
                                 <th style="font-size: 15px">Your over-all satisfaction with the service provided by DOST XI </th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r1" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r2" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r3" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r4" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r5" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="SAT101" name="SAT1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="SAT102" name="SAT1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="SAT103" name="SAT1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="SAT104" name="SAT1" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="SAT105" name="SAT1" ></th>
                             </tr>
 
                             <tr>
@@ -253,11 +253,11 @@
 
                             <tr>
                                 <th style="font-size: 15px">Considering the services availed, how likely are you to recommend DOST XI</th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r1" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r2" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r3" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r4" ></th>
-                                <th style="font-size: 15px"> <input type="radio" id="radioPrimary1" name="r5" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="SAT201" name="SAT2" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="SAT202" name="SAT2" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="SAT203" name="SAT2" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="SAT204" name="SAT2" ></th>
+                                <th style="font-size: 15px"> <input type="radio" id="SAT205" name="SAT2" ></th>
                             </tr>
 
                     </table>
