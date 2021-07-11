@@ -5,6 +5,7 @@ use Laravel\Fortify\Http\Controllers\ProfileInformationController;
 use App\Http\Controllers\activityController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\feedbackController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +54,25 @@ Route::get('edit/{id}',  [activityController::class, 'edit'])->name('edit.create
 
 
 });
+
+Route::prefix('createfeedback')->group(function()
+{
+ //   Route::get('/create', function () {
+   //     return view('create');
+  // })->name('create');
+
+
+//ROUTES FOR CRUD FEEDBACK
+Route::get('view',  [feedbackController::class, 'view'])->name('view.createfeedback');
+Route::get('create',  [feedbackController::class, 'create'])->name('create.createfeedback');
+Route::post('store',  [feedbackController::class, 'store'])->name('store.createfeedback');
+
+
+
+
+
+});
+
 
 
 Route::prefix('joinactivity')->group(function()

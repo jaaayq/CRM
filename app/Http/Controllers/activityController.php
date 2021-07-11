@@ -82,10 +82,10 @@ class activityController extends Controller
       {
 
         $data = activity1::where('id', $id)->first();
-        $data-> activityname = $request->activityname;
-        $data-> activitydate = $request->activitydate;
-        $data-> activitydescription = $request->activitydescription;
-        $data-> activitycode = $request->activitycode;
+        $data-> activityname = $request->ActivityName;
+        $data-> activitydate = $request->ActivityDate;
+        $data-> activitydescription = $request->ActivityDescription;
+        $data-> activitycode = $request->ActivityCode;
 
        $data->save();
        $notification = array(

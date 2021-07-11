@@ -3,7 +3,7 @@
 
 
           <h2 class="font-semibold text-xl text-white-800 leading-tight">
-            {{_('Tasks List') }}
+
         </h2>
     </x-slot>
         <div>

@@ -15,10 +15,10 @@ class TasksController extends Controller
 {
     public function index()
     {
-        abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        // abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $tasks = Task::all();
-
+// dd('ok');
         return view('tasks.index', compact('tasks'));
     }
 

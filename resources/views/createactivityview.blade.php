@@ -34,12 +34,12 @@
                                     </thead>
 
                                     @foreach ($alldata as $key => $data)
-                                    <tr class="">
+                                    <tr>
                                         <td>{{ $key+1 }}</td>
-                                        <td>{{ $data->ActivityName }}</td>
-                                        <td>{{ $data->ActivityDate }}</td>
-                                        <td>{{ $data->ActivityDescription }}</td>
-                                        <td>{{ $data->ActivityCode }}</td>
+                                        <td>{{ $data->activityname }}</td>
+                                        <td>{{ $data->activitydate }}</td>
+                                        <td>{{ $data->activitydescription }}</td>
+                                        <td>{{ $data->activitycode }}</td>
                                         <td>
                                         <a title="Edit" class="btn btn-sm btn-primary" href="{{ route('edit.createactivity', $data->id) }}">EDIT</a>
                                         <a title="Delete" id="delete" class="btn btn-sm btn-danger" href="{{ route('delete.createactivity', $data->id) }}">DELETE</a>
