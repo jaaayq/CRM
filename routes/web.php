@@ -63,9 +63,12 @@ Route::prefix('createfeedback')->group(function()
 
 
 //ROUTES FOR CRUD FEEDBACK
-Route::get('view',  [feedbackController::class, 'view'])->name('view.createfeedback');
+Route::get('view',  [feedbackController::class, 'view'])->name('joinactivityview');
 Route::get('create',  [feedbackController::class, 'create'])->name('create.createfeedback');
 Route::post('store',  [feedbackController::class, 'store'])->name('store.createfeedback');
+Route::post('/update/{id}',  [feedbackController::class, 'update'])->name('update.createfeedback');
+Route::get('delete/{id}',  [feedbackController::class, 'delete'])->name('delete.createfeedback');
+Route::get('edit/{id}',  [feedbackController::class, 'edit'])->name('edit.createfeedback');
 
 
 

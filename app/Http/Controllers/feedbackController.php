@@ -1,17 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\feedback2;
 
 use Illuminate\Http\Request;
-
+use App\Models\feedback2;
 class feedbackController extends Controller
 {
      //
      public function create(){
 
-        return view('createfeedback');
+        return view('joinactivity');
     }
+
+
 
 
     //FUNCTIONS FOR CREATE AMD STPRE
@@ -19,55 +20,65 @@ class feedbackController extends Controller
     {
 
         $data = new feedback2;
-        $data -> FeedBackCompanyName = $request->feedbackcompanyname;
-        $data -> FeedBackDate = $request->feedbackdate;
-        $data -> FeedBackAddress = $request->feedbackaddress;
-        $data -> FeedBackTelephone = $request->feedbacktelephone;
-        $data -> FeedBackEmail = $request->feedbackemail;
-        $data -> FeedBackGender = $request->feedbackgender;
-        $data -> FeedBackNature = $request->feedbacknature;
-        $data -> FeedBackYesno1 = $request->feedbackyesno1;
-        $data -> FeedBackServiceAvailed1 = $request->feedbackserviceavailed1;
-        $data -> FeedBackServiceAvailed2 = $request->feedbackserviceavailed2;
-        $data -> FeedBackConsultancy = $request->feedbackconsultancy;
-        $data -> FeedBackPackaging = $request->feedbackpackaging;
-        $data -> FeedBackScholarship = $request->feedbackscholarship;
-        $data -> FeedBackConversion = $request->feedbackconversion;
-        $data -> FeedBackManagement = $request->feedbackmanagement;
-        $data -> FeedBackManagementSpecify = $request->feedbackmanagementspecify;
-        $data -> T1 = $request->t1;
-        $data -> T2 = $request->t2;
-        $data -> aos1 = $request->AOS1;
-        $data -> aos2 = $request->AOS2;
-        $data -> qos1 = $request->QOS1;
-        $data -> qos2 = $request->QOS2;
-        $data -> utm1 = $request->UTM1;
-        $data -> ctt1 = $request->CTT1;
-        $data -> rip1 = $request->RIP1;
-        $data -> sat1 = $request->SAT1;
-        $data -> sat2 = $request->SAT2;
-        $data -> FeedBackRank1 = $request->feedbackrank1;
-        $data -> FeedBackRank2 = $request->feedbackrank2;
-        $data -> FeedBackRank3 = $request->feedbackrank3;
-        $data -> FeedBackRank4 = $request->feedbackrank4;
-        $data -> FeedBackRank5 = $request->feedbackrank5;
-        $data -> FeedBackExp1 = $request->feedbackexp1;
-        $data -> FeedBackExp2 = $request->feedbackexp2;
-        $data -> FeedBackExp3 = $request->feedbackexp3;
-        $data -> FeedBackSuggest = $request->feedbacksuggest;
-        $data -> FeedBackSignature = $request->feedbacksignature;
-        $data -> FeedBackDesignation = $request->feedbackdesignation;
+        $data -> feedbackcompanyname = $request->feedbackcompanyname;
+        $data -> feedbackdate = $request->feedbackdate;
+        $data -> feedbackaddress = $request->feedbackaddress;
+        $data -> feedbacktelephone = $request->feedbacktelephone;
+        $data -> feedbackemail = $request->feedbackemail;
+        $data -> feedbackgender = $request->feedbackgender;
+        $data -> feedbacknature = $request->feedbacknature;
+        $data -> feedbackyesno1 = $request->feedbackyesno1;
+        $data -> feedbackserviceavailed1 = $request->feedbackserviceavailed1;
+        $data -> feedbackserviceavailed2 = $request->feedbackserviceavailed2;
+        $data -> feedbackconsultancy = $request->feedbackconsultancy;
+        $data -> feedbackpackaging = $request->feedbackpackaging;
+        $data -> feedbackscholarship = $request->feedbackscholarship;
+        $data -> feedbackconversion = $request->feedbackconversion;
+        $data -> feedbackmanagement = $request->feedbackmanagement;
+        $data -> feedbackmanagementspecify = $request->feedbackmanagementspecify;
+        $data -> t1 = $request->t1;
+        $data -> t2 = $request->t2;
+        $data -> AOS1 = $request->AOS1;
+        $data -> AOS2 = $request->AOS2;
+        $data -> QOS1 = $request->QOS1;
+        $data -> QOS2 = $request->QOS2;
+        $data -> UTM1 = $request->UTM1;
+        $data -> CTT1 = $request->CTT1;
+        $data -> RIP1 = $request->RIP1;
+        $data -> SAT1 = $request->SAT1;
+        $data -> SAT2 = $request->SAT2;
+        $data -> feedbackrank1 = $request->feedbackrank1;
+        $data -> feedbackrank2 = $request->feedbackrank2;
+        $data -> feedbackrank3 = $request->feedbackrank3;
+        $data -> feedbackrank4 = $request->feedbackrank4;
+        $data -> feedbackrank5 = $request->feedbackrank5;
+        $data -> feedbackexp1 = $request->feedbackexp1;
+        $data -> feedbackexp2 = $request->feedbackexp2;
+        $data -> feedbackexp3 = $request->feedbackexp3;
+        $data -> feedbacksuggest = $request->feedbacksuggest;
+        $data -> feedbacksignature = $request->feedbacksignature;
+        $data -> feedbackdesignation = $request->feedbackdesignation;
         $data->save();
 
         $notification = array(
             'message' => 'Activity Inserted Successfully',
             'alert-type' => 'success'
         );
-        return redirect()->route('view.createfeedback')->with($notification);
+        return redirect()->route('joinactivityview')->with($notification);
 
 
 
     }
+
+    //FUNCTIONS FOR VIEW
+    public function view()
+    {
+
+        $alldata = feedback2::all();
+        return view('joinactivityview', compact('alldata'));
+    }
+
+
 
 
       }
