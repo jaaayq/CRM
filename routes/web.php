@@ -90,3 +90,9 @@ Route::prefix('joinactivitytest')->group(function()
     Route::get('viewjointest',  [activityController::class, 'viewjointest'])->name('viewjointest.joinactivitytest');
 
 });
+
+Route::prefix('index')->group(function()
+{
+    Route::get('data',  [activityController::class, 'data'])->name('data.index');
+
+});

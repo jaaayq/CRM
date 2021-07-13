@@ -21,17 +21,24 @@
                 </div>
 
                 <div class="card-body">
-                    <form>
+                    <form action="{{ route('data.index') }}" method="GET" role="search">
                             <label>ENTER ACTIVITY CODE:</label>
-                            <input id="authenticationcode" class="form-control"  type="email" name="authenticationcode" :value="old('authenticationcode')" required  />
-                            <div>
-                                <a class="btn btn-primary" href="{{ route('viewjoin.joinactivity') }}" class="nav-link {{ ($route=='viewjoin.joinactivity')?'active':'' }}" role="button">JOIN ACTIVITY</a>
-                            </div>
-                </div>
+                            <input class="form-control mr-2" name="code" placeholder="Activity Code" id="code" required  />
+
+                                {{--<a class="btn btn-primary" href="{{ route('viewjoin.joinactivity') }}" class="nav-link {{ ($route=='viewjoin.joinactivity')?'active':'' }}" role="button">JOIN ACTIVITY</a>
+                           --}}
+                        <div>
+                           <a href="{{ route('viewjoin.joinactivity') }}" class=" mt-1">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button" title="Refresh page">JOIN ACTIVITY
+                                </button>
+                        </div>
+
             </form>
 
 
             </div>
+
         </section>
 
 

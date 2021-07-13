@@ -82,10 +82,10 @@ class activityController extends Controller
       {
 
         $data = activity1::where('id', $id)->first();
-        $data-> activityname = $request->ActivityName;
-        $data-> activitydate = $request->ActivityDate;
-        $data-> activitydescription = $request->ActivityDescription;
-        $data-> activitycode = $request->ActivityCode;
+        $data-> ActivityName = $request->activityname;
+        $data-> ActivityDate = $request->activitydate;
+        $data-> ActivityDescription = $request->activitydescription;
+        $data-> ActivityCode = $request->activitycode;
 
        $data->save();
        $notification = array(
@@ -93,6 +93,27 @@ class activityController extends Controller
         'alert-type' => 'success'
     );
     return back()->with($notification);
+
+      }
+
+      public function index(Request $request){
+
+        $data = activity1::where([
+            ['activitycode', '!=', null],
+            [function($query)use ($request) {
+                if(($code = $request->code)) {
+                    $query->orWhere('activitycode', 'LIKE', '%' . $code . '%')->get();
+                }
+
+            }]
+
+        ])
+                ->orderBy("id", "desc")
+                ->paginate(10);
+
+                return view('data.index', compact('data'))
+                ->with('i', (request()->input('page', 1) -1 )* 5);
+
 
       }
 

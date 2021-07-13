@@ -28,7 +28,8 @@ $route= Route::current()->getName();
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
 
         <div class="nav-item {{ ($prefix=='joinactivitytest')?'menu-open':''}}">
-          <a href="{{ route('viewjointest.joinactivitytest') }}" class="nav-link {{ ($route=='viewjointest.joinactivitytest')?'active':'' }}"> <i class="fas fa-sign-in-alt">JOIN ACTIVITY </i> </a>
+          <a href="{{ route('viewjointest.joinactivitytest') }}" class="nav-link {{ ($route=='viewjointest.joinactivitytest')?'active':'' }}"> <i class="fas fa-sign-in-alt">
+              Join Activity </i> </a>
         </div>
       </div>
       <!-- SidebarSearch Form -->
@@ -54,6 +55,16 @@ $route= Route::current()->getName();
               <p>
                 <i class="fas fa-plus-circle">
                 Create Activity
+                </i>
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item {{ ($prefix=='joinactivityview')?'menu-open':''}}">
+            <a href="{{ route('joinactivityview') }}" class="nav-link {{ ($route=='joinactivityview')?'active':'' }}">
+              <p>
+                <i class="fas fa-list">
+                Feedback Log
                 </i>
               </p>
             </a>

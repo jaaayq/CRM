@@ -18,14 +18,14 @@
                     <div class="form-row">
                     <div class="form-group col-sm-6">
                         <label>Name of Company</label>
-                        <input type="text" name="feedbackcompanyname" class="form-control" placeholder="Enter ...">
+                        <input type="text" name="feedbackcompanyname" class="form-control"  required placeholder="Enter ..." >
                     </div>
 
                     {{--DATE--}}
                     <div class="form-group col-sm-6">
                         <label>Date:</label>
                           <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                              <input type="text" name="feedbackdate" class="form-control datetimepicker-input" data-target="#reservationdate"/>
+                              <input type="text" name="feedbackdate" class="form-control datetimepicker-input"  required data-target="#reservationdate"/>
                               <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
                                   <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                               </div>
@@ -34,17 +34,17 @@
 
                       <div class="form-group col-sm-6">
                         <label>Address</label>
-                        <input type="text" name="feedbackaddress" class="form-control" placeholder="Enter ...">
+                        <input type="text" name="feedbackaddress" class="form-control" required placeholder="Enter ...">
                     </div>
 
                     <div class="form-group col-sm-6">
                         <label>Telephone No.</label>
-                        <input type="text" name="feedbacktelephone" class="form-control" placeholder="Enter ...">
+                        <input type="text" name="feedbacktelephone" class="form-control" required placeholder="Enter ...">
                     </div>
 
                     <div class="form-group col-sm-6">
                         <label>Email Address</label>
-                        <input type="text" name="feedbackemail" class="form-control" placeholder="Enter ...">
+                        <input type="text" name="feedbackemail" class="form-control" required placeholder="Enter ...">
                     </div>
 
                     <div class="form-group col-sm-6">
@@ -71,7 +71,7 @@
                             <label><input type="checkbox" name="feedbacknature"/> Trading </label>
                             <label><input type="checkbox" name="feedbacknature"/> Academe </label>
                             <label><input type="checkbox" name="feedbacknature"/> Government </label>
-                            <input type="text" class="form-control"  name="feedbacknature" placeholder="Others, Please specify">
+                            <input type="text" class="form-control"  name="feedbacknature"  placeholder="Others, Please specify">
                     </div>
                 </div>
 
@@ -87,9 +87,9 @@
                         <label style="font-size: 20px">1 . Services availed from DOST XI</label>
                     <div class="form-row">
                         <label>Technology Intervention (please specify):</label>
-                        <input type="text" class="form-control" name="feedbackserviceavailed1" placeholder="Enter ...">
+                        <input type="text" class="form-control" required name="feedbackserviceavailed1" placeholder="Enter ...">
                         <label>Technology Intervention (please specify):</label>
-                        <input type="text" class="form-control" name="feedbackserviceavailed2" placeholder="Enter ...">
+                        <input type="text" class="form-control" required name="feedbackserviceavailed2" placeholder="Enter ...">
                     </div>
                     </div>
 
@@ -108,7 +108,7 @@
                 <div class="form-col-sm-6">
                     <label>Packaging and Labeling Services:</label>
                     <div class="checkbox">
-                        <label><input type="checkbox" name="feedbackpackaging"/> Label Design </label>
+                        <label><input type="checkbox"  name="feedbackpackaging"/> Label Design </label>
                         <label><input type="checkbox" name="feedbackpackaging"/> Nutrition Facts Labeling </label>
                         <label><input type="checkbox" name="feedbackpackaging"/> PTD Services </label>
                         <input type="text" class="form-control" name="feedbackpackaging" placeholder=" Others (specify):">
@@ -117,12 +117,12 @@
 
                 <div class="form-row">
                     <label>Scholarship (please indicate assistance):</label>
-                    <input type="text" class="form-control" name="feedbackscholarship" placeholder="Enter ...">
+                    <input type="text" class="form-control" name="feedbackscholarship"  required placeholder="Enter ...">
                     <label>Formula of Conversion (please indicate product):</label>
-                    <input type="text" class="form-control" name="feedbackconversion" placeholder="Enter ...">
+                    <input type="text" class="form-control" name="feedbackconversion"  required placeholder="Enter ...">
                     <label>R&D Management (please specify):</label>
-                    <input type="text" class="form-control" name="feedbackmanagement" placeholder="Enter ...">
-                    <input type="text" class="form-control" name="feedbackmanagementspecify" placeholder="Others (Specify): ">
+                    <input type="text" class="form-control" name="feedbackmanagement" required placeholder="Enter ...">
+                    <input type="text" class="form-control" name="feedbackmanagementspecify"  required placeholder="Others (Specify): ">
 
                 </div>
 
@@ -275,27 +275,27 @@
                                         </thead>
 
                                         <tr>
-                                            <th style="font-size: 15px"><input type="text" class="form-control" name="feedbackrank1" placeholder="Enter ..."></th>
+                                            <th style="font-size: 15px"><input type="text" class="form-control" required name="feedbackrank1" placeholder="Enter ..."></th>
                                             <th style="font-size: 15px">Department of Science and Technology XI</th>
                                         </tr>
 
                                         <tr>
-                                            <th style="font-size: 15px"><input type="text" class="form-control" name="feedbackrank2" placeholder="Enter ..."></th>
+                                            <th style="font-size: 15px"><input type="text" class="form-control" required name="feedbackrank2" placeholder="Enter ..."></th>
                                             <th style="font-size: 15px">Department of Trade and Industry XI</th>
                                         </tr>
 
                                         <tr>
-                                            <th style="font-size: 15px"><input type="text" class="form-control" name="feedbackrank3" placeholder="Enter ..."></th>
+                                            <th style="font-size: 15px"><input type="text" class="form-control" required name="feedbackrank3" placeholder="Enter ..."></th>
                                             <th style="font-size: 15px">Technical Skill and Development Authority XI</th>
                                         </tr>
 
                                         <tr>
-                                            <th style="font-size: 15px"><input type="text" class="form-control" name="feedbackrank4" placeholder="Enter ..."></th>
+                                            <th style="font-size: 15px"><input type="text" class="form-control" required name="feedbackrank4" placeholder="Enter ..."></th>
                                             <th style="font-size: 15px">University of Immaculate Concepcion</th>
                                         </tr>
 
                                         <tr>
-                                            <th style="font-size: 15px"><input type="text" class="form-control" name="feedbackrank5" placeholder="Enter ..."></th>
+                                            <th style="font-size: 15px"><input type="text" class="form-control" required name="feedbackrank5" placeholder="Enter ..."></th>
                                             <th style="font-size: 15px">Others:</th>
                                         </tr>
 
@@ -308,14 +308,14 @@
                                 <div class="form-row ">
                                     <div class="form-group col-lg-8">
                                        <label>7. Give at least three words that best describe your experience with the services availed:</label>
-                                       <label>1.)<input type="text" class="form-control" name="feedbackexp1" placeholder="Enter ..."></label>
-                                       <label>2.)<input type="text" class="form-control" name="feedbackexp2" placeholder="Enter ..."></label>
-                                       <label>3.)<input type="text" class="form-control" name="feedbackexp3" placeholder="Enter ..."></label>
+                                       <label>1.)<input type="text" class="form-control" required name="feedbackexp1" placeholder="Enter ..."></label>
+                                       <label>2.)<input type="text" class="form-control" required name="feedbackexp2" placeholder="Enter ..."></label>
+                                       <label>3.)<input type="text" class="form-control" required name="feedbackexp3" placeholder="Enter ..."></label>
                                 <div >
                                     <label>8. Any other suggestions to improve our service?</label>
                                         <textarea class="form-control" rows="8" name="feedbacksuggest" placeholder="Enter ..."></textarea>
-                                        <label>Signature:<input type="text" class="form-control" name="feedbacksignature" placeholder="Enter ..."></label>
-                                        <label>Designation:<input type="text" class="form-control" name="feedbackdesignation" placeholder="Enter ..."></label>
+                                        <label>Signature:<input type="text" class="form-control" required name="feedbacksignature" placeholder="Enter ..."></label>
+                                        <label>Designation:<input type="text" class="form-control"  required name="feedbackdesignation" placeholder="Enter ..."></label>
 
                                     </div>
                                 </div>
