@@ -14,6 +14,7 @@
                     <section class="col-md-12">
                         <div class="card">
                             <div class="card-body" style="color: #070807; background: white;">
+                                <div id="table-scroll">
                                 <table id="myTable" class="table table-stripped tabel-bordered" style="width: 100% ">
                                     <thead>
                                         <tr>
@@ -107,7 +108,7 @@
                                     @endforeach
 
                                 </table>
-
+                            </div>
                         </div>
                         </div>
 
@@ -135,3 +136,30 @@ $(document).ready( function () {
 } );
 
 </script>
+
+<style>
+    #table-wrapper {
+  position:relative;
+}
+#table-scroll {
+  height:500px;
+  overflow:auto;
+  margin-top:20px;
+}
+#table-wrapper table {
+  width:100%;
+
+}
+#table-wrapper table * {
+  background:rgb(255, 255, 255);
+  color:black;
+}
+#table-wrapper table thead th .text {
+  position:absolute;
+  top:-20px;
+  z-index:2;
+  height:20px;
+  width:35%;
+  border:1px solid red;
+}
+</style>
