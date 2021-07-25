@@ -4,6 +4,12 @@
 
         <!-- /.content-header -->
 
+
+
+
+{{--FEEDBACK FORM BLADE--}}
+
+
         <!-- Main content -->
         <section class="content">
   <!-- general form elements disabled -->

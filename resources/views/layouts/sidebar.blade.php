@@ -6,6 +6,7 @@
       <span class="brand-text font-weight-heavy">CRM</span>
     </a>
 
+{{--SIDEBAR NAVIGATION--}}
 
   @php
 $prefix = Request::route()->getPrefix();

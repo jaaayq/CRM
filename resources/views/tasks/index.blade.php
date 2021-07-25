@@ -3,7 +3,7 @@
 
 
           <h2 class="font-semibold text-xl text-white-800 leading-tight">
-
+{{--TASKS LIST BLADE--}}
         </h2>
     </x-slot>
         <div>

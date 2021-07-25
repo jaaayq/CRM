@@ -4,6 +4,10 @@
 
         <!-- /.content-header -->
 
+
+{{--CREATE ACITVITY VIEW BLADE--}}
+
+
         <!-- Main content -->
         <section class="col-md-12">
             <div class="card card-warning">

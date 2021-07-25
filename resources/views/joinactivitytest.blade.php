@@ -4,6 +4,10 @@
 
         <!-- /.content-header -->
 
+
+{{--JOIN ACTIVITY AUTHENTICATION BLADE--}}
+
+
         <!-- Main content -->
 
         @php
@@ -29,7 +33,7 @@
                                 {{--<a class="btn btn-primary" href="{{ route('viewjoin.joinactivity') }}" class="nav-link {{ ($route=='viewjoin.joinactivity')?'active':'' }}" role="button">JOIN ACTIVITY</a>
                            --}}
 
-                        <button class="btn btn-primary" type="submit" title="Refresh page">
+                        <button class="btn btn-primary" type="submit" title="Refresh page" >
                             <a href="{{ route('viewjoin.joinactivity') }}" class=" mt-1">JOIN ACTIVITY
                                 </button>
                         </div>

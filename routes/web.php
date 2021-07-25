@@ -6,6 +6,7 @@ use App\Http\Controllers\activityController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\feedbackController;
+use App\Http\Controllers\ChartJsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,7 +77,7 @@ Route::get('edit/{id}',  [feedbackController::class, 'edit'])->name('edit.create
 
 });
 
-
+//FEEDBACK FORM
 
 Route::prefix('joinactivity')->group(function()
 {
@@ -85,14 +86,19 @@ Route::prefix('joinactivity')->group(function()
 });
 
 
+//JOINACTIVITY
+
 Route::prefix('joinactivitytest')->group(function()
 {
     Route::get('viewjointest',  [activityController::class, 'viewjointest'])->name('viewjointest.joinactivitytest');
 
 });
 
+//JOINACITIVTY AUTHENTICATION
+
 Route::prefix('index')->group(function()
 {
     Route::get('data',  [activityController::class, 'data'])->name('data.index');
 
 });
+

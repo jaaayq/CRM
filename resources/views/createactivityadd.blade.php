@@ -30,6 +30,8 @@
  <link rel="stylesheet" href="{{asset('../../dist/css/adminlte.min.css ') }}">
 
 
+ {{--CREATE ACITVITY BLADE--}}
+
         <section class="col-md-12">
             <div class="card card-warning">
                 <div class="card-header">

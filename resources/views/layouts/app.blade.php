@@ -34,6 +34,8 @@
 {{--SWEETALERT2--}}
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
 
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed ">

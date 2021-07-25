@@ -4,6 +4,10 @@
 
         <!-- /.content-header -->
 
+{{--MAIN DASHBOARD BLADE--}}
+
+
+
         <!-- Main content -->
         <section class="content">
           <div class="container-fluid">
@@ -71,5 +75,7 @@
       <!-- Main Footer -->
     </x-slot>
 
+
 </x-app-layout>
-<
+
+
