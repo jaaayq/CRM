@@ -71,6 +71,18 @@ $route= Route::current()->getName();
             </a>
           </li>
 
+          <li class="nav-item {{ ($prefix=='aboutus')?'menu-open':''}}">
+            <a href="{{ route('viewaboutus.aboutus') }}" class="nav-link {{ ($route=='viewaboutus.aboutus')?'active':'' }}">
+                <i class="fas fa-address-card"></i>
+              <p>
+                About
+              </p>
+                </i>
+            </a>
+
+          </li>
+
+
          {{-- <li class="nav-item {{ ($prefix=='viewactivity')?'menu-open':''}}">
             <a href="{{ route('view') }}" class="nav-link {{ ($route=='view')?'active':'' }}">
               <p>

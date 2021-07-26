@@ -102,3 +102,9 @@ Route::prefix('index')->group(function()
 
 });
 
+Route::prefix('aboutus')->group(function()
+{
+    Route::get('viewaboutus',  [activityController::class, 'viewaboutus'])->name('viewaboutus.aboutus');
+
+});
+
