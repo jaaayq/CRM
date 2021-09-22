@@ -21,7 +21,7 @@ $route= Route::current()->getName();
 
         <div class="info">
 
-          <a href="#" class="d-block"><i class="fas fa-user">{{ Auth::user()->name}}</i></a>
+          <a href="#" class="d-block"><i class="fas fa-user"> {{ Auth::user()->name}} </i></a>
 
         </div>
       </div>

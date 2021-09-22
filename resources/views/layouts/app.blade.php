@@ -41,7 +41,7 @@
 <body class="hold-transition dark-mode sidebar-mini layout-fixed ">
 
     <div class="min-h-screen bg-gray-100">
-        @livewire('navigation-menu')
+        <!-- add livewire nav here-->
 
 
         <main>
@@ -203,6 +203,7 @@ $(function(){
 </script>
 
 
+</div>
 
 
 </body>

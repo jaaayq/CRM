@@ -8,6 +8,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\feedbackController;
 use App\Http\Controllers\ChartJsController;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,21 +21,66 @@ use App\Http\Controllers\ChartJsController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/* Route::group(['middleware' => 'auth'], function () {
+    Route::resource('tasks', \App\Http\Controllers\TasksController::class);
+    Route::resource('users', \App\Http\Controllers\UsersController::class);
+}); 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+
+Route::middleware(['auth:sanctum', 'verified', 'accessrole'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-
-Route::group(['middleware' => 'auth'], function () {
-    Route::resource('tasks', \App\Http\Controllers\TasksController::class);
-
-    Route::resource('users', \App\Http\Controllers\UsersController::class);
+Route::group(['middleware' => [
+    'auth:sanctum',
+    'verified',
+    'accessrole',
+]], function () {
+   
 });
 
+
+
+*/
+
+
+Route::group(['middleware' => [
+    'auth:sanctum',
+    'verified',
+    'accessrole',
+]], function () {
+
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+
+    Route::get('/aboutus', function () {
+        return view('aboutus');
+    })->name('aboutus');
+
+    Route::get('/users', function () {
+        return view('users.index');
+    })->name('usersindex');
+
+
+
+
+    Route::resource('tasks', \App\Http\Controllers\TasksController::class);
+    Route::resource('users', \App\Http\Controllers\UsersController::class);
+
+});
+
+
+
+
+
+
+Route::get('/', function () {
+    return view('welcome');
+
+
+});
 
 
 Route::prefix('createactivity')->group(function()

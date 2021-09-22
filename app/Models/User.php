@@ -27,6 +27,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'roles',
     ];
 
     /**
@@ -73,4 +74,28 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Role::class);
     }
+    
+    /**
+     * check if a user has a role
+     *
+     * @param  mixed $role
+     * @return void
+     */
+    public function hasAnyRole(string $role)
+    {
+        return null !== $this->roles()->where('name', $role)->first();
+    }
+    
+    /**
+     * check the user has any given  role
+     *
+     * @param  mixed $role
+     * @return void
+     */
+    public function hasAnyRoles(array $role)
+    {
+        return null !== $this->roles()->whereIn('name', $role)->first();
+    }
 }
+
+    
