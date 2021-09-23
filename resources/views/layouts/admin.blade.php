@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Add users</title>
-</head>
-<body>
- <!-- Fonts -->
+
+ 
+    <!-- Fonts -->
  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
  <!-- Styles -->
@@ -35,8 +35,9 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
-
 </head>
+
+
 <body class="hold-transition dark-mode sidebar-mini layout-fixed ">
 
    <div class="min-h-screen bg-gray-100">
@@ -44,14 +45,15 @@
        @livewire('navigation-menu')
 
        <main>
+
           {{--}} {{ $slot }} --}}
           <div class="wrapper">
 
         
 
- <!-- Navbar -->
+        <!-- Navbar -->
 
- <!-- /.navbar -->
+       <!-- /.navbar -->
 
            <!-- Main Sidebar Container -->
            <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -85,8 +87,9 @@
 
                {{$slot}}
 
-
-         </div>
+              </div>
+            </div>
+          </div>
        </main>
 
        <footer class="main-footer">
@@ -96,7 +99,7 @@
              <b>Version</b> 1
            </div>
          </footer>
-   </div>
+   
 
    @stack('modals')
 
@@ -104,7 +107,7 @@
 
 
 
-<div class="wrapper">
+
 
  
 
@@ -192,7 +195,7 @@ $(function(){
 </script>
 
 
-</div>
+
 
 
 </body>

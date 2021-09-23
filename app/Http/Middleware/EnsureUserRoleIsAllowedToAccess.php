@@ -55,6 +55,7 @@ class EnsureUserRoleIsAllowedToAccess
                 'admin' => [
                     'dashboard',
                     'tasks.index',
+                    'users.store',
                     'createfeedback',
                     'users.index',
                     'users.create',
@@ -64,6 +65,7 @@ class EnsureUserRoleIsAllowedToAccess
                     'joinactivity',
                     'aboutus',
                     'user.edit',
+                    'users.update'
                   
                     
             

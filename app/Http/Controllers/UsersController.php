@@ -32,10 +32,15 @@ class UsersController extends Controller
 
     public function store(StoreUserRequest $request)
     {
+
+       $user = User::create($request->except(['_token', 'roles']));
+
+       $user->roles()->sync($request->roles);
+        
        /* $user = User::create($request->validated());
         $user->roles()->sync($request->input('roles', []));
-
-        return redirect()->route('users.index');*/
+*/
+        return redirect()->route('users.index');
     }
 
     public function show(User $user)
@@ -47,21 +52,21 @@ class UsersController extends Controller
 
     public function edit($id)
     {
-        /* abort_if(Gate::denies('user_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-
-        $roles = Role::pluck('title', 'id');
-
-        $user->load('roles');
-
-        return view('users.edit', compact('user', 'roles'));*/
+        return view('users.edit', 
+        [
+            'roles' => Role::all(),
+            'user'=> User::find($id)
+        ]);
+        
+        
     }
 
     public function update(UpdateUserRequest $request, User $user)
     {
-        /*$user->update($request->validated());
+        $user->update($request->validated());
         $user->roles()->sync($request->input('roles', []));
 
-        return redirect()->route('users.index');*/
+        return redirect()->route('users.index');
     }
 
     public function destroy($id)

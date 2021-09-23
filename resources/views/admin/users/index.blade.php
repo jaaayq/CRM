@@ -9,7 +9,7 @@
       <div class="row"> 
         <div  class="col-12">
 
-        <h2 class="float-left"> Users List </h2>
+        <h2 class="float-left"> Users  </h2>
         <a class="btn btn-sm btn-success float-right" href="{{ route('users.create') }}" role="button">Create</a>
 
       </div>

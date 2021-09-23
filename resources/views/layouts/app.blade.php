@@ -88,8 +88,8 @@
                 </div>
 
                 {{$slot}}
-
-
+            </div>
+            </div>
           </div>
         </main>
 
@@ -100,7 +100,7 @@
               <b>Version</b> 1
             </div>
           </footer>
-    </div>
+    
 
     @stack('modals')
 
@@ -108,12 +108,6 @@
 
 
 
-<div class="wrapper">
-
-  <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__wobble" src="{{asset('dist/img/crm.png')}}" alt="CRMLogo" height="60" width="60">
-  </div>
 
   <!-- Navbar -->
 
@@ -143,6 +137,7 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src={{ asset('dist/js/pages/dashboard2.js') }}></script>
 <script src="{{asset('http://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js')}}"></script>
+
 <script>
 $(document).ready( function () {
     $('#myTable').DataTable();
@@ -203,7 +198,7 @@ $(function(){
 </script>
 
 
-</div>
+
 
 
 </body>
