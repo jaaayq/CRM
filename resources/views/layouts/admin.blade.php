@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add users</title>
+    <title>Create users</title>
 
  
     <!-- Fonts -->
@@ -59,8 +59,8 @@
            <aside class="main-sidebar sidebar-dark-primary elevation-4">
              <!-- Brand Logo -->
              <a href="index3.html" class="brand-link">
-               <img src="{{asset('dist/img/crm.png')}}" alt="CRM Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-               <span class="brand-text font-weight-heavy">Admin Dashboard</span>
+               <img src="{{asset('dist/img/dostlogo.png')}}" alt="CRM Logo" class="brand-image img-circle elevation-3 " style="opacity: .8">
+               <span class="brand-text font-weight-heavy font-RO">Admin Dashboard</span>
              </a>
 
              <!-- Sidebar -->

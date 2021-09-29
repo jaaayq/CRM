@@ -8,12 +8,26 @@ module.exports = {
     ],
 
     theme: {
-        extend: {
-            fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
-            },
+        
+
+        colors: {
+            gray:{
+              1000: '#454D55',
+            }
         },
+
+        fontFamily: {
+            PT: ['PT Sans Narrow'],
+            sans: ['Nunito'],
+            RO: ['Inter']
+        
     },
+},
+        
+    
+
+
+     
 
     variants: {
         opacity: ['responsive', 'hover', 'focus', 'disabled'],

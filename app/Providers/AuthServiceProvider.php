@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
@@ -17,6 +18,10 @@ class AuthServiceProvider extends ServiceProvider
         // 'App\Models\Model' => 'App\Policies\ModelPolicy',
     ];
 
+
+
+
+    
     /**
      * Register any authentication / authorization services.
      *
@@ -31,5 +36,6 @@ class AuthServiceProvider extends ServiceProvider
             return $user;
         });
         //
+      
     }
 }

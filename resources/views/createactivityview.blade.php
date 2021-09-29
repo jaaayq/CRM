@@ -9,31 +9,33 @@
 
 
         <!-- Main content -->
-        <section class="col-md-12">
+        <section class="col-md-12 ">
             <div class="card card-warning">
                 <div class="card-header">
-                <h3 class="card-title">ACIVITIES</h3>
+                <h3 class="card-title font-RO">ACIVITIES</h3>
                 </div>
                 <div class="card-body">
                     <section class="col-md-12">
                         <div class="card">
-                            <div class="card-header">
+                            <div class="card-header ">
                                 <h3>
-                                    <a class="btn btn-success float-right btn-sm" href="{{route('create.createactivity')}}"><i class="fa fa-list"> CREATE ACTIVITY</i></a>
+                                    <a class="btn btn-success float-right btn-sm " href="{{route('create.createactivity')}}"> CREATE ACTIVITY</a>
                                 </h3>
                             </div>
 
                             <div class="card-body" style="color: #070807; background: white;">
-                                <table id="myTable" class="table table-stripped tabel-bordered" style="width: 100% ">
+                                <table id="myTable" class="table table-stripped tabel-bordered" style="width: 100%">
                                     <thead>
                                         <tr>
-                                            <th style="font-size: 12px">Activity No.</th>
-                                            <th style="font-size: 12px">Acitvity Name</th>
-                                            <th style="font-size: 12px">Date of Activity</th>
-                                            <th style="font-size: 12px">Activity Description</th>
-                                            <th style="font-size: 12px">Activity Code</th>
+                                            <th style="font-family:Inter; font-size: 12px">Activity No.</th>
+                                            <th style="font-family:Inter; font-size: 12px">Activity Name</th>
+                                            <th style="font-family:Inter; font-size: 12px">Date of Activity</th>
+                                            <th style="font-family:Inter; font-size: 12px">Activity Description</th>
+                                            <th style="font-family:Inter; font-size: 12px">Activity Code</th>
 
-                                            <th style="font-size: 12px">Action</th>
+                                           <!-- <th style="font-size: 12px">Activity Code</th> -->
+
+                                            <th style="font-family:Inter; font-size: 12px">Action</th>
                                         </tr>
                                     </thead>
 

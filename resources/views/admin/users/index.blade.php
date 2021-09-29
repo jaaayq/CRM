@@ -26,7 +26,7 @@
             <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col">Id</th>
+                  <!--  <th scope="col">Id</th> -->
                     <th scope="col">Role</th>
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
@@ -36,7 +36,7 @@
                 <tbody>
                     @foreach ($users as $user)
                     <tr>
-                        <th scope="row">{{$user->id}}</th>
+                     <!--   <th scope="row">{{$user->id}}</th> -->
                         <td>{{$user->roles}}</td>
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>

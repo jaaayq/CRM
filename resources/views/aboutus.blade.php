@@ -16,7 +16,7 @@
 
 
           @endphp
-        <section class="col-md-12">
+        <section class="col-md-12 ">
             <div class="card card-warning">
                 <div class="card-header">
                 <h3 class="card-title">
@@ -24,7 +24,7 @@
                 </h3>
                 </div>
 
-                <div class="card-body">
+                <div class="card-body ">
                    <h3> CUSTOMER RELATIONSHIP MANAGEMENT SYSTEM</h3>
                    <h6> -The system is able to create an activity and getting the feedback from the customer</h6>
                    <br>

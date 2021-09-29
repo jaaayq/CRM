@@ -43,11 +43,27 @@ Route::group(['middleware' => [
 
 */
 
+/*
+Route::group(['middleware'=> '!auth'], function () {
+
+    Route::group([
+        'prefix' => 'customer',
+    ], function() {
+        Route::get('joinactivitytest',[\App\Http\Controllers\TasksController::class, 'joinactivitytest'])
+        ->name('joinactivititytest');
+});
+
+
+    
+}); */
+
+
 
 Route::group(['middleware' => [
     'auth:sanctum',
     'verified',
     'accessrole',
+    
 ]], function () {
 
     Route::get('/dashboard', function () {
@@ -73,11 +89,10 @@ Route::group(['middleware' => [
 
 
 
-
-
-
 Route::get('/', function () {
     return view('welcome');
+
+
 
 
 });

@@ -19,8 +19,8 @@
                   <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
 
                   <div class="info-box-content">
-                    <span class="info-box-text">FEEDBACKS</span>
-                    <span class="info-box-number">41,410</span>
+                    <span class="info-box-text ">FEEDBACKS</span>
+                    <span class="info-box-number ">41,410</span>
                   </div>
                   <!-- /.info-box-content -->
                 </div>
@@ -36,8 +36,8 @@
                   <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
 
                   <div class="info-box-content">
-                    <span class="info-box-text">CREATED ACTIVITIES</span>
-                    <span class="info-box-number">2,000</span>
+                    <span class="info-box-text ">CREATED ACTIVITIES</span>
+                    <span class="info-box-number ">2,000</span>
                   </div>
                   <!-- /.info-box-content -->
                 </div>
