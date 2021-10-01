@@ -6,9 +6,9 @@ use App\Http\Controllers\activityController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\feedbackController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ChartJsController;
-
-
+use Illuminate\Routing\Route as RoutingRoute;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,12 +80,13 @@ Route::group(['middleware' => [
     })->name('usersindex');
 
 
-
-
     Route::resource('tasks', \App\Http\Controllers\TasksController::class);
     Route::resource('users', \App\Http\Controllers\UsersController::class);
 
 });
+
+Route::get('/redirect', '\App\Http\Controllers\HomeController@index');
+
 
 
 
