@@ -54,22 +54,23 @@ class EnsureUserRoleIsAllowedToAccess
                 
                 'user' => [
                     'dashboard',
-                  
-                ],
-                'admin' => [
-                    'dashboard',
                     'tasks.index',
                     'users.store',
                     'createfeedback',
-                    'users.index',
-                    'users.create',
-                    'users.edit',
-                    'users.destroy',
                     'createactivity',
                     'joinactivity',
                     'aboutus',
+                  
+                ],
+                'admin' => [
+                    'users.store',
+                    'users.index',
+                    'users.create',
+                    'users.edit',
+                    'users.destroy',              
                     'user.edit',
-                    'users.update'
+                    'users.update',
+                    'aboutus'
                   
                     
             

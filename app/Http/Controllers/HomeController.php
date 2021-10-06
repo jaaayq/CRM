@@ -12,6 +12,7 @@ class HomeController extends Controller
     public function index(){
 
         $role=Auth::user()->roles;
+        $users = User::all();
 
         if ($role =='admin')
         {
@@ -21,7 +22,9 @@ class HomeController extends Controller
         {
             return view ('dashboard');
         }
+       
 
+       
 
     }
 }

@@ -1,5 +1,6 @@
-<x-app-layout>
-    <x-slot name="slot">
+@extends('layouts.outsideguest')
+
+@section('content')
        <!-- Content Wrapper. Contains page content -->
 
         <!-- /.content-header -->
@@ -336,7 +337,11 @@
                     </div>
                 </div>
 
-                    <button class="btn btn-primary" id="update" type="submit">SUBMIT FEEDBACK</button>
+                    <button class="btn btn-primary" id="update" type="submit">Submit Feedback</button>
+
+                    <button class="btn btn-primary" id="update" type="submit">
+                        
+                        <a href="{{ route('login') }}" class=" mt-1">Return</button>
 
 
                     </form>
@@ -347,9 +352,7 @@
 
 
       <!-- Main Footer -->
-    </x-slot>
-
-</x-app-layout>
+      @endsection
 <!-- ChartJS -->
 <!-- jQuery -->
 <script src="../../plugins/jquery/jquery.min.js"></script>

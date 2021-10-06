@@ -1,5 +1,6 @@
-<x-app-layout>
-    <x-slot name="slot">
+@extends('layouts.outsideguest')
+
+@section('content')
        <!-- Content Wrapper. Contains page content -->
 
         <!-- /.content-header -->
@@ -32,7 +33,7 @@
 
                                 {{--<a class="btn btn-primary" href="{{ route('viewjoin.joinactivity') }}" class="nav-link {{ ($route=='viewjoin.joinactivity')?'active':'' }}" role="button">JOIN ACTIVITY</a>
                            --}}
-
+                            <br>
                         <button class="btn btn-primary" type="submit" title="Refresh page" >
                             <a href="{{ route('viewjoin.joinactivity') }}" class=" mt-1">JOIN ACTIVITY
                                 </button>
@@ -45,14 +46,7 @@
 
         </section>
 
+        @endsection
 
 
-
-      <!-- Main Footer -->
-    </x-slot>
-
-</x-app-layout>
-<!-- ChartJS -->
-
-
-
+    

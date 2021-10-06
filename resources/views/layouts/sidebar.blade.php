@@ -8,12 +8,11 @@
 
 {{--SIDEBAR NAVIGATION--}}
 
-  @php
-$prefix = Request::route()->getPrefix();
-$route= Route::current()->getName();
+@php
+  $prefix = Request::route()->getPrefix();
+  $route= Route::current()->getName();
+@endphp
 
-
-  @endphp
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->

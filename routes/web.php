@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\feedbackController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ChartJsController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Routing\Route as RoutingRoute;
 
 /*
@@ -57,7 +58,7 @@ Route::group(['middleware'=> '!auth'], function () {
     
 }); */
 
-
+Route::get('/redirect', '\App\Http\Controllers\HomeController@index');
 
 Route::group(['middleware' => [
     'auth:sanctum',
@@ -84,10 +85,6 @@ Route::group(['middleware' => [
     Route::resource('users', \App\Http\Controllers\UsersController::class);
 
 });
-
-Route::get('/redirect', '\App\Http\Controllers\HomeController@index');
-
-
 
 
 Route::get('/', function () {
@@ -171,3 +168,6 @@ Route::prefix('aboutus')->group(function()
 
 });
 
+//user join
+
+Route::get('cms', [activityController::class, 'viewactivity']);
