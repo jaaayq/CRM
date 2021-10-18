@@ -72,16 +72,7 @@ class User extends Authenticatable
     }
 
     
-    /**
-     * setPasswordAttribute
-     * newly created function for userpassword
-     * @param  mixed $password
-     * @return void
-     */
-    public function setPasswordAttribute($password)
-    {
-        $this->attributes['password'] = Hash::make($password);
-    }
+   
 
 
 

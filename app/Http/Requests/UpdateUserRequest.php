@@ -16,14 +16,16 @@ class UpdateUserRequest extends FormRequest
             ],
             'email'   => [
                 'required',
-                'unique:users,email,' . request()->route('user')->id,
+                
             ],
+            
             'roles.*' => [
-                'integer',
+                'string',
             ],
             'roles'   => [
-                'required',
+               
                 'string',
+                'required',
                 
             ],
         ];

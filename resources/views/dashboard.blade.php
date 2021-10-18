@@ -10,7 +10,7 @@
 
         <!-- Main content -->
         <section class="content">
-          <div class="container-fluid">
+          <div class="container-fluid font-RO">
             <!-- Info boxes -->
             <div class="row">
               <!-- /.col -->
@@ -49,7 +49,7 @@
 
 
             <!-- BAR CHART -->
-            <div class="card card-warning">
+            <div class="card card-info">
                 <div class="card-header">
                 <h3 class="card-title">Bar Chart</h3>
 

@@ -61,10 +61,10 @@ class feedbackController extends Controller
         $data->save();
 
         $notification = array(
-            'message' => 'Activity Inserted Successfully',
+            'message' => 'Feedback has been sent',
             'alert-type' => 'success'
         );
-        return redirect()->route('joinactivityview')->with($notification);
+        return redirect()->route('customerfeedback')->with($notification);
 
 
 
@@ -76,6 +76,13 @@ class feedbackController extends Controller
 
         $alldata = feedback2::all();
         return view('joinactivityview', compact('alldata'));
+    }
+
+    //functions for customer view
+    public function customer()
+    {
+
+      return redirect('customer')->with('SMESSAGE', 'FEEDBACK HAS BEEN SENT');
     }
 
 

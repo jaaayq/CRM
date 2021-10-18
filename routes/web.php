@@ -88,11 +88,14 @@ Route::group(['middleware' => [
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
+
+});
 
 
 
-
+Route::get('/customer', function () {
+    return view('customer');
 });
 
 
@@ -130,7 +133,7 @@ Route::post('store',  [feedbackController::class, 'store'])->name('store.createf
 Route::post('/update/{id}',  [feedbackController::class, 'update'])->name('update.createfeedback');
 Route::get('delete/{id}',  [feedbackController::class, 'delete'])->name('delete.createfeedback');
 Route::get('edit/{id}',  [feedbackController::class, 'edit'])->name('edit.createfeedback');
-
+Route::get('customer',  [feedbackController::class, 'customer'])->name('customerfeedback');
 
 
 
@@ -171,3 +174,5 @@ Route::prefix('aboutus')->group(function()
 //user join
 
 Route::get('cms', [activityController::class, 'viewactivity']);
+
+

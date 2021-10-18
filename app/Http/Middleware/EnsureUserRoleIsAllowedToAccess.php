@@ -21,16 +21,16 @@ class EnsureUserRoleIsAllowedToAccess
      */
     public function handle(Request $request, Closure $next)
     {
-        echo 'middleware gate. <br>';
+       // echo 'middleware gate. <br>';
 
 
         $userRole= auth()->user()->roles;
 
         $currentRouteName = Route::currentRouteName();
         
-
-        echo 'User role: '. $userRole .'<br>';
-        echo 'Route Name: '. $currentRouteName .'<br>';
+//
+      //  echo 'User role: '. $userRole .'<br>';
+      //  echo 'Route Name: '. $currentRouteName .'<br>';
 
 
         if (in_array($currentRouteName, $this->userAccessRole()[$userRole])){

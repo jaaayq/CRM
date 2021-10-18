@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\activity1;
+use BaconQrCode\Renderer\RendererStyle\Fill;
+use Error;
+use Illuminate\Support\Facades\DB;
+use Symfony\Component\Console\Input\Input;
 
 class activityController extends Controller
 {
@@ -31,11 +35,37 @@ class activityController extends Controller
     }
 
 
-    public function viewactivity(){
+    public function viewactivity(Request $request){
 
-        return view('joinactivity');
 
+    
+    // $request=Input::get('code');
+    $code = $request->input('code');
+
+
+     //  $code = Input::get('code');
+
+      if (DB::table('activity1s')->where('activitycode', $code)->exists()){
+           
+         return view('joinactivity');
+      
+     }else{
+
+      
+
+        return redirect('customer')->with('message', 'CODE DOES NOT EXIST');
+
+            // abort(403, 'Code does not exist');
+
+            
+        
+            
     }
+}
+
+
+
+
 
     //FUNCTIONS FOR CREATE AMD STPRE
     public function store(Request $request)
@@ -49,7 +79,7 @@ class activityController extends Controller
         $data->save();
 
         $notification = array(
-            'message' => 'Activity Inserted Successfully',
+            'message' => 'Activity added successfully',
             'alert-type' => 'success'
         );
         return redirect()->route('view.createactivity')->with($notification);

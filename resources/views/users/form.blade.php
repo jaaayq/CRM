@@ -1,30 +1,40 @@
 @csrf
         
 <div>
-    <x-jet-label for="name" value="{{ __('Name') }}" /> 
-    <x-jet-input id="name "  class="block mt-1 w-full " type="text"   name="name" :value="old('name')" 
-     required autofocus autocomplete="name" /> 
+    <x-jet-label class="text-black font-RO" for="name" value="{{ __('Name') }}" /> 
+    <input id="name "  class="text-black bg-white block mt-1 w-full px-3 py-1 rounded-lg " type="text"   name="name" autofocus autocomplete="name" required value={{ old('name') }}
+    @isset($user) {{$user->name}} @endisset> 
 </div>
 
 <div class="mt-4">
-    <x-jet-label for="email" value="{{ __('Email') }}" />
-    <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+    <x-jet-label class="text-black font-RO" for="email" value="{{ __('Email') }}" />
+    <input id="email" class="text-black bg-white w-full px-3 py-1 rounded-lg" type="email" name="email"  required value={{ old('email') }}
+     @isset($user) {{$user->email}} @endisset>
 </div>
 @isset($create)
     
 
 <div class="mt-4">
-    <x-jet-label for="password" value="{{ __('Password') }}" />
-    <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+    <x-jet-label class="text-black font-RO" for="password" value="{{ __('Password') }}" />
+    <x-jet-input id="password" class="text-black bg-white w-full px-3 py-1 rounded-lg" type="password" name="password" required autocomplete="new-password" />
 </div>
 
 @endisset
 <div class="mt-4">
-    <x-jet-label for="roles" value="{{ __('Register as:') }}" /> <br>
-    <select name="roles" x-model="roles" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-        <option value="1">Admin</option>
-        <option value="2">User</option>
+    
+        
+    <x-jet-label class="text-black font-RO" for="roles" value="{{ __('Role:') }}" /> <br>
+    <select name="roles" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
+        
+       
+   <option value="admin">Admin</option> 
+   <option value="user">User</option> 
+  
+     
+        
     </select>
+    
+   
 </div>
 
 @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
@@ -45,7 +55,7 @@
 @endif
 <br>
 <div class="flex items-center justify-end mt-4">
-    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('users.index') }}">
+    <a class="underline text-sm text-white hover:text-gray-900" href="{{ route('users.index') }}">
         {{ __('Return to Users List') }}
     </a>
 

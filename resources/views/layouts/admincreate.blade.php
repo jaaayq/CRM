@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Create users</title>
+    <title></title>
 
  
     <!-- Fonts -->
@@ -42,7 +42,7 @@
 
    <div class="min-h-screen bg-gray-100">
        <!-- add livewire nav here-->
-       @livewire('navigation-menu')
+     
 
        <main>
 
@@ -60,7 +60,7 @@
              <!-- Brand Logo -->
              <a href="{{ route('users.index') }}" class="brand-link">
                <img src="{{asset('dist/img/dostlogo.png')}}" alt="CRM Logo" class="brand-image img-circle elevation-3 " style="opacity: .8">
-               <span class="brand-text font-weight-heavy font-RO"> Dashboard</span>
+               <span class="brand-text font-weight-heavy font-RO">Dashboard</span>
              </a>
 
 
@@ -114,14 +114,7 @@
                 
          
          
-                  {{-- <li class="nav-item {{ ($prefix=='viewactivity')?'menu-open':''}}">
-                     <a href="{{ route('view') }}" class="nav-link {{ ($route=='view')?'active':'' }}">
-                       <p>
-                         View Activity
-                       </p>
-                     </a>
-                   </li>--}}
-         
+                
              </div>
              <!-- /.sidebar -->
    

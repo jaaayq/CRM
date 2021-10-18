@@ -93,7 +93,7 @@
           </div>
         </main>
 
-        <footer class="main-footer">
+        <footer class="main-footer font-RO">
             <strong>Copyright &copy; 2014-2021 <a href="#">CRM</a>.</strong>
             All rights reserved.
             <div class="float-right d-none d-sm-inline-block">

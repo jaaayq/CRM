@@ -33,13 +33,13 @@
  {{--CREATE ACITVITY BLADE--}}
 
         <section class="col-md-12">
-            <div class="card card-warning">
-                <div class="card-header">
-                <h3 class="card-title">
+            <div class="card card-info">
+                <div class="card-header ">
+                <h3 class="card-title font-RO">
                     @if (isset($editdata))
                     EDIT INFORMATION
                     @else
-                    CREATE ACIVITY
+                    CREATE ACTIVITY
                     @endif
                 </h3>
 

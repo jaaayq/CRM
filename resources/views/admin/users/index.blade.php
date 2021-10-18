@@ -3,7 +3,7 @@
 
 <!-- Main content -->
 <section class="content">
-  <div class="container-fluid">
+  <div class="container-fluid font-RO">
 
 
       <div class="row"> 

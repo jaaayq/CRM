@@ -7,7 +7,9 @@ use App\Http\Requests\UpdateUserRequest;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Requests;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Hash;
 use Symfony\Component\HttpFoundation\Response;
 
 class UsersController extends Controller
@@ -26,21 +28,27 @@ class UsersController extends Controller
 
     public function create()
     {
-        
+      
+
         return view('users.create', ['roles' => Role::all()]);
     }
 
     public function store(StoreUserRequest $request)
     {
 
-       $user = User::create($request->except(['_token', 'roles']));
-
-       $user->roles()->sync($request->roles);
+        $user = new User();
+        $user -> name = $request->name;
+        $user -> email = $request->email;
+        $user -> password = Hash::make( $request->password); 
         
-       /* $user = User::create($request->validated());
-        $user->roles()->sync($request->input('roles', []));
-*/
-        return redirect()->route('users.index');
+        $user -> roles = $request->roles;
+        $user->save();
+
+        $notification = array(
+            'message' => ' User added successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('users.index')->with($notification);
     }
 
     public function show(User $user)
@@ -52,21 +60,39 @@ class UsersController extends Controller
 
     public function edit($id)
     {
+   
+
+
         return view('users.edit', 
-        [
-            'roles' => Role::all(),
-            'user'=> User::find($id)
-        ]);
-        
+       [
+          'roles' => Role::all(),
+          'user'=> User::find($id)
+     ]);
+
+
+
+
         
     }
 
-    public function update(UpdateUserRequest $request, User $user)
+    public function update(UpdateUserRequest $request, $id)
     {
-        $user->update($request->validated());
-        $user->roles()->sync($request->input('roles', []));
+        $user = User::find($id);
+        $user-> name = $request->input('name');
+        $user-> email = $request->input('email');
+        $user-> roles = $request->input('roles');
+        
 
-        return redirect()->route('users.index');
+       $user->save();
+
+       $notification = array(
+        'message' => ' User updated successfully',
+        'alert-type' => 'success'
+    );
+    return redirect()->route('users.index')->with($notification);
+
+
+       // return redirect()->route('users.index');
     }
 
     public function destroy($id)

@@ -1,6 +1,6 @@
 @extends('layouts.outsideguest')
 
-@section('content')
+@section('contentoutside')
        <!-- Content Wrapper. Contains page content -->
 
         <!-- /.content-header -->
@@ -13,25 +13,31 @@
 
         <!-- Main content -->
         <section class="content">
+            
   <!-- general form elements disabled -->
-        <div class="card card-warning">
+  <div class="w-4/5 container-sm bg-gray-1000">
+    
+        <div class="card card-info">
             <div class="card-header">
             <h3 class="card-title">CUSTOMER SATISFACTION FEEDBACK FORM</h3>
             </div>
             <!-- /.card-header -->
-            <div class="card-body">
-                <form class="center" method="POST" action="{{ route('store.createfeedback') }}" enctype="multipart/form-data"  >
+            <div class="card-body bg-gray-1300 font-RO text-sm">
+                <!--border --> <div class="border-gray-1200 border-l border-r border-dashed">
+                <form class="center border-2 border-transparent" method="POST" action="{{ route('store.createfeedback') }}" enctype="multipart/form-data"  >
                     @csrf
                     <div class="form-row">
-                    <div class="form-group col-sm-6">
+                    <div class="form-group col-sm-6 ">
                         <label>Name of Company</label>
-                        <input type="text" name="feedbackcompanyname" class="form-control"  required placeholder="Enter ..." >
+                        <input type="text" name="feedbackcompanyname" class="form-control "  required placeholder="Enter ..." >
                     </div>
-
+                    
+                  
+                    
                     {{--DATE--}}
                     <div class="form-group col-sm-6">
                         <label>Date:</label>
-                          <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                          <div class="input-group date " id="reservationdate" data-target-input="nearest">
                               <input type="text" name="feedbackdate" class="form-control datetimepicker-input"  required data-target="#reservationdate"/>
                               <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
                                   <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -54,15 +60,15 @@
                         <input type="text" name="feedbackemail" class="form-control" required placeholder="Enter ...">
                     </div>
 
-                    <div class="form-group col-sm-6">
+                    <div class="form-group col-sm-6 ">
                         <label>Gender</label>
-                        <select class="form-control " name="feedbackgender" style="width: 100%;">
+                        <select class="form-control" name="feedbackgender" style="width: 100%;">
                           <option>Male</option>
                           <option>Female</option>
                         </select>
                     </div>
 
-                    <div class="form-horizontal" >
+                    <div class="form-horizontal mt-1 p-1 space-x-0.5 " >
                         <label>Nature of Business (please check):</label>
                         <div class="checkbox">
                             <label><input type="checkbox" name="feedbacknature" value="Food/Beverage "/> Food/Beverage </label>
@@ -78,11 +84,11 @@
                             <label><input type="checkbox" name="feedbacknature" value="Trading" /> Trading </label>
                             <label><input type="checkbox" name="feedbacknature" value="Academe"/> Academe </label>
                             <label><input type="checkbox" name="feedbacknature" value="Government"/> Government </label>
-                            <input type="text" class="form-control"  name="feedbacknature"  placeholder="Others, Please specify">
+                            <input type="text" class="w-1/2 p-1.5"  name="feedbacknature"  placeholder="Others, Please specify"> <br>
                     </div>
                 </div>
 
-                      <div class="form-group col-sm-6">
+                      <div class="form-group col-sm-6 border-b border-dashed border-gray-1200">
                             <div class="checkbox">
                             <label>Is it your first time to avail of the programs and services of DOST XI?</label>
                             <label><input type="checkbox" name="feedbackyesno1" value="yes" /> Yes </label>
@@ -90,17 +96,22 @@
                             </div>
                      </div>
 
-                     <div>
-                        <label style="font-size: 20px">1 . Services availed from DOST XI</label>
+               </div>      <!-- end of border -->
+               <br>
+                   
+
+                     <div class="border-gray-1100 ">
+                        <label class="text-lg "><strong> 1. Services availed from DOST XI </strong></label>
                     <div class="form-row">
+                        &nbsp;
                         <label>Technology Intervention (please specify):</label>
-                        <input type="text" class="form-control" required name="feedbackserviceavailed1" placeholder="Enter ...">
-                        <label>Technology Intervention (please specify):</label>
-                        <input type="text" class="form-control" required name="feedbackserviceavailed2" placeholder="Enter ...">
+                        <input type="text" class="form-control" required name="feedbackserviceavailed1" placeholder="Enter ..."> 
+                        <label>Technology Intervention (please specify):</label> 
+                        <input type="text" class="form-control" required name="feedbackserviceavailed2" placeholder="Enter ...">  &nbsp;
                     </div>
                     </div>
 
-                    <div class="form-col-sm-6" >
+                    <div class="form-col-sm-6 p-2" >
                         <label>Consultancy Service:</label>
                         <div class="checkbox">
                             <label><input type="checkbox" name="feedbackconsultancy" value="Energy Audit"/> Energy Audit </label>
@@ -108,53 +119,55 @@
                             <label><input type="checkbox" name="feedbackconsultancy" value="Plant Layout Design"/> Plant Layout Design </label>
                             <label><input type="checkbox" name="feedbackconsultancy" value="CPT"/> CPT </label>
                             <label><input type="checkbox" name="feedbackconsultancy" value="GMP Assessment"/> GMP Assessment </label>
-                            <input type="text" class="form-control" name="feedbackconsultancy" placeholder="Others (specify):">
+                            <input type="text" class="form-control " name="feedbackconsultancy" placeholder="Others (specify):">
                     </div>
                 </div>
 
-                <div class="form-col-sm-6">
+                <div class="form-col-sm-6 p-2">
                     <label>Packaging and Labeling Services:</label>
                     <div class="checkbox">
                         <label><input type="checkbox"  name="feedbackpackaging" value="Label Design"/> Label Design </label>
                         <label><input type="checkbox" name="feedbackpackaging" value="Nutrition Facts Labeling"/> Nutrition Facts Labeling </label>
                         <label><input type="checkbox" name="feedbackpackaging" value="PTD Services"/> PTD Services </label>
-                        <input type="text" class="form-control" name="feedbackpackaging" placeholder=" Others (specify):">
+                        <input type="text" class="form-control" name="feedbackpackaging" placeholder=" Others (specify):">   &nbsp;
                 </div>
             </div>
-
-                <div class="form-row">
-                    <label>Scholarship (please indicate assistance):</label>
-                    <input type="text" class="form-control" name="feedbackscholarship"  required placeholder="Enter ...">
-                    <label>Formula of Conversion (please indicate product):</label>
-                    <input type="text" class="form-control" name="feedbackconversion"  required placeholder="Enter ...">
-                    <label>R&D Management (please specify):</label>
-                    <input type="text" class="form-control" name="feedbackmanagement" required placeholder="Enter ...">
-                    <input type="text" class="form-control" name="feedbackmanagementspecify"  placeholder="Others (Specify): ">
+          
+                <div class="pb-3 border-b border-dashed border-gray-1200">
+                    
+                    <label>Scholarship (please indicate assistance):</label> <br>
+                    <input type="text" class="w-1/2 p-1.5" name="feedbackscholarship"  required placeholder="Enter ..."> <br>
+                    <label>Formula of Conversion (please indicate product):</label><br>
+                    <input type="text" class="w-1/2 p-1.5" name="feedbackconversion"  required placeholder="Enter ..."><br>
+                    <label>R&D Management (please specify):</label> <br>
+                    <input type="text" class="w-1/2 p-1.5" name="feedbackmanagement" required placeholder="Enter ..."><br>
+                    <br>
+                    <input type="text" class="w-3/12 p-1.5" name="feedbackmanagementspecify"  placeholder="Others (Specify): ">
 
                 </div>
 
-                <div class="center">
-                    <label style="font-size: 20px">2 . Delivery Services </label>
+                <div class="center border-transparent">
+                    <label class="text-lg">2 . Delivery Services </label>
                 <div class="form-row">
-                    <label style="font-size: 20px">1- Poor 2- Fair 3-Satisfactory 4- Very Satisfactory 5- Excellent</label>
+                    <label class="text-sm text-center">1- Poor 2- Fair 3-Satisfactory 4- Very Satisfactory 5- Excellent</label>
                     <table class="table table-stripped table-bordered">
                         <thead>
                             <tr>
-                                <th style="font-size: 20px">ASPECTS</th>
-                                <th style="font-size: 20px">1</th>
-                                <th style="font-size: 20px">2</th>
-                                <th style="font-size: 20px">3</th>
-                                <th style="font-size: 20px">4</th>
-                                <th style="font-size: 20px">5</th>
+                                <th class="text-sm">ASPECTS</th>
+                                <th class="text-sm">1</th>
+                                <th class="text-sm">2</th>
+                                <th class="text-sm">3</th>
+                                <th class="text-sm">4</th>
+                                <th class="text-sm">5</th>
                             </tr>
                         </thead>
 
                             <tr>
-                                <th style="font-size: 20px">1. Timelessness</th>
+                                <th class="text-lg">1. Timelessness</th>
                             </tr>
 
                             <tr>
-                                <th style="font-size: 15px">Timelessness on the conduct of the activity as indicated
+                                <th class="text-sm">Timelessness on the conduct of the activity as indicated
                                 in the program (time started, time allotted per topic, time ended)</th>
                                 <th style="font-size: 15px"> <input type="radio" id="timelessness101" name="t1" value="1"></th>
                                 <th style="font-size: 15px"> <input type="radio" id="timelessness102" name="t1" value="2"></th>
@@ -163,7 +176,7 @@
                                 <th style="font-size: 15px"> <input type="radio" id="timelessness105" name="t1" value="5"></th>
                             </tr>
                             <tr>
-                                <th style="font-size: 15px">Timelessness on the delivery of service,per agreed terms</th>
+                                <th class="text-sm">Timelessness on the delivery of service,per agreed terms</th>
                                 <th style="font-size: 15px"> <input type="radio" id="timelessness201" name="t2" value="1"></th>
                                 <th style="font-size: 15px"> <input type="radio" id="timelessness202" name="t2" value="2"></th>
                                 <th style="font-size: 15px"> <input type="radio" id="timelessness203" name="t2" value="3"></th>
@@ -176,7 +189,7 @@
                             </tr>
 
                             <tr>
-                                <th style="font-size: 15px">Courtesy and professionalism of the staff assigned to assist you</th>
+                                <th class="text-sm">Courtesy and professionalism of the staff assigned to assist you</th>
                                 <th style="font-size: 15px"> <input type="radio" id="AOS101" name="AOS1" value="1"></th>
                                 <th style="font-size: 15px"> <input type="radio" id="AOS102" name="AOS1" value="2"></th>
                                 <th style="font-size: 15px"> <input type="radio" id="AOS103" name="AOS1" value="3"></th>
@@ -184,7 +197,7 @@
                                 <th style="font-size: 15px"> <input type="radio" id="AOS105" name="AOS1" value="5"></th>
                             </tr>
                             <tr>
-                                <th style="font-size: 15px">Courtesy and professionalism of the trainers/experts for the
+                                <th class="text-sm">Courtesy and professionalism of the trainers/experts for the
                                      training/service</th>
                                 <th style="font-size: 15px"> <input type="radio" id="AOS201" name="AOS2" value="1"></th>
                                 <th style="font-size: 15px"> <input type="radio" id="AOS202" name="AOS2" value="2"></th>
@@ -194,11 +207,11 @@
                             </tr>
 
                             <tr>
-                                <th style="font-size: 20px">3. Quality of Service</th>
+                                <th class="text-lg">3. Quality of Service</th>
                             </tr>
 
                             <tr>
-                                <th style="font-size: 15px">Achievement of training objectives</th>
+                                <th class="text-sm">Achievement of training objectives</th>
                                 <th style="font-size: 15px"> <input type="radio" id="QOS101" name="QOS1" value="1"></th>
                                 <th style="font-size: 15px"> <input type="radio" id="QOS102" name="QOS1" value="2"></th>
                                 <th style="font-size: 15px"> <input type="radio" id="QOS103" name="QOS1" value="3"></th>
@@ -206,7 +219,7 @@
                                 <th style="font-size: 15px"> <input type="radio" id="QOS105" name="QOS1" value="5"></th>
                             </tr>
                             <tr>
-                                <th style="font-size: 15px">Delivery and mastery of the trainers on the topic/s</th>
+                                <th class="text-sm">Delivery and mastery of the trainers on the topic/s</th>
                                 <th style="font-size: 15px"> <input type="radio" id="QOS201" name="QOS2" value="1"></th>
                                 <th style="font-size: 15px"> <input type="radio" id="QOS202" name="QOS2" value="2"></th>
                                 <th style="font-size: 15px"> <input type="radio" id="QOS203" name="QOS2" value="3"></th>
@@ -214,7 +227,7 @@
                                 <th style="font-size: 15px"> <input type="radio" id="QOS205" name="QOS2" value="5"></th>
                             </tr>
                             <tr>
-                                <th style="font-size: 15px">Usefulness of the training materials</th>
+                                <th class="text-sm">Usefulness of the training materials</th>
                                 <th style="font-size: 15px"> <input type="radio" id="UTM101" name="UTM1" value="1"></th>
                                 <th style="font-size: 15px"> <input type="radio" id="UTM102" name="UTM1" value="2"></th>
                                 <th style="font-size: 15px"> <input type="radio" id="UTM103" name="UTM1" value="3"></th>
@@ -222,7 +235,7 @@
                                 <th style="font-size: 15px"> <input type="radio" id="UTM105" name="UTM1" value="5"></th>
                             </tr>
                             <tr>
-                                <th style="font-size: 15px">Conductiveness of training venue for teaching</th>
+                                <th class="text-sm">Conductiveness of training venue for teaching</th>
                                 <th style="font-size: 15px"> <input type="radio" id="CTT101" name="CTT1" value="1"></th>
                                 <th style="font-size: 15px"> <input type="radio" id="CTT102" name="CTT1" value="2"></th>
                                 <th style="font-size: 15px"> <input type="radio" id="CTT103" name="CTT1" value="3"></th>
@@ -230,7 +243,7 @@
                                 <th style="font-size: 15px"> <input type="radio" id="CTT105" name="CTT1" value="5"></th>
                             </tr>
                             <tr>
-                                <th style="font-size: 15px">Relevance of the interventions/assistance provided</th>
+                                <th class="text-sm">Relevance of the interventions/assistance provided</th>
                                 <th style="font-size: 15px"> <input type="radio" id="RIP101" name="RIP1" value="1"></th>
                                 <th style="font-size: 15px"> <input type="radio" id="RIP102" name="RIP1" value="2"></th>
                                 <th style="font-size: 15px"> <input type="radio" id="RIP103" name="RIP1" value="3"></th>
@@ -239,11 +252,11 @@
                             </tr>
 
                             <tr>
-                                <th style="font-size: 20px">4. Over-all perception of the service  </th>
+                                <th class="text-lg">4. Over-all perception of the service  </th>
                             </tr>
 
                             <tr>
-                                <th style="font-size: 15px">Your over-all satisfaction with the service provided by DOST XI </th>
+                                <th class="text-sm">Your over-all satisfaction with the service provided by DOST XI </th>
                                 <th style="font-size: 15px"> <input type="radio" id="SAT101" name="SAT1" value="1"></th>
                                 <th style="font-size: 15px"> <input type="radio" id="SAT102" name="SAT1" value="2"></th>
                                 <th style="font-size: 15px"> <input type="radio" id="SAT103" name="SAT1" value="3"></th>
@@ -252,11 +265,11 @@
                             </tr>
 
                             <tr>
-                                <th style="font-size: 20px">5. Would you like to recommend the programs and services of DOST XI to others?  </th>
+                                <th class="text-lg">5. Would you like to recommend the programs and services of DOST XI to others?  </th>
                             </tr>
 
                             <tr>
-                                <th style="font-size: 15px">Considering the services availed, how likely are you to recommend DOST XI</th>
+                                <th class="text-sm">Considering the services availed, how likely are you to recommend DOST XI</th>
                                 <th style="font-size: 15px"> <input type="radio" id="SAT201" name="SAT2" value="1"></th>
                                 <th style="font-size: 15px"> <input type="radio" id="SAT202" name="SAT2" value="2"></th>
                                 <th style="font-size: 15px"> <input type="radio" id="SAT203" name="SAT2" value="2"></th>
@@ -269,41 +282,41 @@
                 </div>
                 </div>
 
-                                <div class="center">
-                                    <label style="font-size: 20px">6 . What other agencies/organizations/institutions that have assisted you with similar service?</label>
-                                <div class="form-row">
-                                    <label>Please Rank.</label>
+                                <div class="center border-transparent">
+                                    <label class="text-lg">6 . What other agencies/organizations/institutions that have assisted you with similar service?</label>
+                                <div class="form-row w-auto">
+                                   <!-- <label>Please Rank.</label>-->
                                     <table class="table table-stripped table-bordered">
                                         <thead>
                                             <tr>
-                                                <th style="font-size: 20px">RANK</th>
-                                                <th style="font-size: 20px">Name of Agency/Organization/Instituition</th>
+                                                <th class="text-sm">RANK</th>
+                                                <th class="text-sm">Name of Agency/Organization/Instituition</th>
                                             </tr>
                                         </thead>
 
                                         <tr>
                                             <th style="font-size: 15px"><input type="text" class="form-control" required name="feedbackrank1" placeholder="Enter ..."></th>
-                                            <th style="font-size: 15px">Department of Science and Technology XI</th>
+                                            <th class="text-sm">Department of Science and Technology XI</th>
                                         </tr>
 
                                         <tr>
                                             <th style="font-size: 15px"><input type="text" class="form-control" required name="feedbackrank2" placeholder="Enter ..."></th>
-                                            <th style="font-size: 15px">Department of Trade and Industry XI</th>
+                                            <th class="text-sm">Department of Trade and Industry XI</th>
                                         </tr>
 
                                         <tr>
                                             <th style="font-size: 15px"><input type="text" class="form-control" required name="feedbackrank3" placeholder="Enter ..."></th>
-                                            <th style="font-size: 15px">Technical Skill and Development Authority XI</th>
+                                            <th class="text-sm">Technical Skill and Development Authority XI</th>
                                         </tr>
 
                                         <tr>
                                             <th style="font-size: 15px"><input type="text" class="form-control" required name="feedbackrank4" placeholder="Enter ..."></th>
-                                            <th style="font-size: 15px">University of Immaculate Concepcion</th>
+                                            <th class="text-sm">University of Immaculate Concepcion</th>
                                         </tr>
 
                                         <tr>
                                             <th style="font-size: 15px"><input type="text" class="form-control" required name="feedbackrank5" placeholder="Enter ..."></th>
-                                            <th style="font-size: 15px">Others:</th>
+                                            <th class="text-sm">Others:</th>
                                         </tr>
 
 
@@ -314,39 +327,50 @@
 
                                 <div class="form-row ">
                                     <div class="form-group col-lg-8">
-                                       <label>7. Give at least three words that best describe your experience with the services availed:</label>
-                                       <label>1.)<input type="text" class="form-control" required name="feedbackexp1" placeholder="Enter ..."></label>
-                                       <label>2.)<input type="text" class="form-control" required name="feedbackexp2" placeholder="Enter ..."></label>
-                                       <label>3.)<input type="text" class="form-control" required name="feedbackexp3" placeholder="Enter ..."></label>
-                                <div >
+                                       <div class="p-1">
+                                      <label class="text-sm"> Give at least three words that best describe your experience with the services availed:</label> 
+
+                                      <br>
+                                     
+                                      <tr>
+                                      <th> 1.)<input type="text" class="form-control" required name="feedbackexp1" placeholder="Enter ..."></th>
+                                       <th>2.)<input type="text" class="form-control" required name="feedbackexp2" placeholder="Enter ..."></th>
+                                      <th>3.)<input type="text" class="form-control" required name="feedbackexp3" placeholder="Enter ..."></th>
+                                        </tr>
+
+                                    </div>
+                                
+
+                                    <br>
                                     <label>8. Any other suggestions to improve our service?</label>
-                                        <textarea class="form-control" rows="8" name="feedbacksuggest" placeholder="Enter ..."></textarea>
+                                        <textarea class="form-control" rows="8" name="feedbacksuggest" placeholder="Enter ..."></textarea> <br>
                                         <label>Signature:<input type="text" class="form-control" required name="feedbacksignature" placeholder="Enter ..."></label>
                                         <label>Designation:<input type="text" class="form-control"  required name="feedbackdesignation" placeholder="Enter ..."></label>
 
-                                    </div>
+                                   
+
+
+
+
+                                     </div>
+
+
                                 </div>
 
 
-                                    </div>
 
-
-
-
+                    
 
                     </div>
                 </div>
 
-                    <button class="btn btn-primary" id="update" type="submit">Submit Feedback</button>
+                    <button class="btn btn-info" id="update" type="submit">Submit Feedback</button>
 
-                    <button class="btn btn-primary" id="update" type="submit">
-                        
-                        <a href="{{ route('login') }}" class=" mt-1">Return</button>
-
+                   
 
                     </form>
-
-
+    </div>
+               
 
         </section>
 

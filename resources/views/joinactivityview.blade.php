@@ -1,5 +1,5 @@
 <x-app-layout>
-    <x-slot name="slot">
+  <x-slot name="slot">
        <!-- Content Wrapper. Contains page content -->
 
         <!-- /.content-header -->
@@ -10,9 +10,9 @@
 
         <!-- Main content -->
         <section class="col-md-12">
-            <div class="card card-warning">
-                <div class="card-header">
-                <h3 class="card-title">FEEDBACK LOG</h3>
+            <div class="card card-info">
+                <div class="card-header ">
+                <h3 class="card-title font-RO">FEEDBACK LOG</h3>
                 </div>
                 <div class="card-body">
                     <section class="col-md-12">
@@ -127,7 +127,7 @@
       <!-- Main Footer -->
     </x-slot>
 
-</x-app-layout>
+  </x-app-layout>
 <!-- ChartJS -->
 
 <link rel="stylesheet" href="http://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
