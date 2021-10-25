@@ -19,7 +19,7 @@
                         <div class="card">
                             <div class="card-body" style="color: #070807; background: white;">
                                 <div id="table-scroll">
-                                <table id="myTable" class="table table-stripped tabel-bordered" style="width: 100% ">
+                                <table id="myTable" class="table table-stripped tabel-bordered font-RO" style="width: 100% ">
                                     <thead>
                                         <tr>
                                             <th style="font-size: 12px">Feedback ID.</th>

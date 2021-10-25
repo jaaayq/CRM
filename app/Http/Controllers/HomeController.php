@@ -11,12 +11,14 @@ class HomeController extends Controller
 {
     public function index(){
 
-        $role=Auth::user()->roles;
+        $role=Auth::user()->role;
         $users = User::all();
 
         if ($role =='admin')
         {
-            return view ('users.create');
+            return view('admin.users.index', ['users'=> User::paginate(10)]);
+          
+           // return view ('users.create');
         }
         else
         {

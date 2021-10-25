@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>DOST Feedback</title>
+    <title>Feedback</title>
 
 
      <!-- Styles -->
@@ -32,6 +32,8 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<!-- font awesome -->
+<script src="https://use.fontawesome.com/62e8d6d224.js"></script>
 
 
 

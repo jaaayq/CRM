@@ -22,7 +22,7 @@ class UpdateUserRequest extends FormRequest
             'roles.*' => [
                 'string',
             ],
-            'roles'   => [
+            'role'   => [
                
                 'string',
                 'required',

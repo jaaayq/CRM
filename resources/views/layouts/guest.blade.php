@@ -17,6 +17,8 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <!-- font awesome -->
+<script src="https://use.fontawesome.com/62e8d6d224.js"></script>
     </head>
     
     <body>

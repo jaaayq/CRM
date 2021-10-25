@@ -19,7 +19,7 @@
                         <div class="card">
                             <div class="card-header ">
                                 <h3>
-                                    <a class="btn btn-success float-right btn-sm " href="{{route('create.createactivity')}}"> CREATE ACTIVITY</a>
+                                    <a title="Add Activity" class="btn btn-success float-right btn-sm " href="{{route('create.createactivity')}}"><i class="fas fa-plus-square"></i> &nbsp;ADD</a>
                                 </h3>
                             </div>
 
@@ -30,6 +30,7 @@
                                             <th style="font-family:Inter; font-size: 12px">Activity No.</th>
                                             <th style="font-family:Inter; font-size: 12px">Activity Name</th>
                                             <th style="font-family:Inter; font-size: 12px">Date of Activity</th>
+                                            <th style="font-family:Inter; font-size: 12px">Date Finished</th>
                                             <th style="font-family:Inter; font-size: 12px">Activity Description</th>
                                             <th style="font-family:Inter; font-size: 12px">Activity Code</th>
 
@@ -44,11 +45,28 @@
                                         <td>{{ $key+1 }}</td>
                                         <td>{{ $data->activityname }}</td>
                                         <td>{{ $data->activitydate }}</td>
+                                        <td>{{ $data->date_finished }}</td>
                                         <td>{{ $data->activitydescription }}</td>
                                         <td>{{ $data->activitycode }}</td>
                                         <td>
-                                        <a title="Edit" class="btn btn-sm btn-primary" href="{{ route('edit.createactivity', $data->id) }}">EDIT</a>
-                                        <a title="Delete" id="delete" class="btn btn-sm btn-danger" href="{{ route('delete.createactivity', $data->id) }}">DELETE</a>
+                                            
+                                          
+                           
+                                            @if ($data->activity_status == 1)
+                  
+                                            <a title="De-activate" class="btn btn-sm btn-success m-0" href="{{ route('activity.status.update', ['act_id' => $data->id, 'act_status'=>0]) }}" role="button"><i class="fa fa-check"></i></a>
+                                            
+                                            @else
+                  
+                                            <a title="Activate" class="btn btn-sm btn-danger m-0" href="{{ route('activity.status.update', ['act_id'=>$data->id, 'act_status'=>1]) }}" role="button"><i class="fa fa-ban"></i></a>
+                                            
+                  
+                                            @endif
+
+
+
+                                        <a title="Edit" class="btn btn-sm btn-primary m-1" href="{{ route('edit.createactivity', $data->id) }}"><i class="fas fa-pencil-square-o"></i></a>
+                                        <a title="Delete" id="delete" class="btn btn-sm btn-danger" href="{{ route('delete.createactivity', $data->id) }}"><i class="far fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                     @endforeach

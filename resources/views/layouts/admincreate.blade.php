@@ -60,7 +60,7 @@
              <!-- Brand Logo -->
              <a href="{{ route('users.index') }}" class="brand-link">
                <img src="{{asset('dist/img/dostlogo.png')}}" alt="CRM Logo" class="brand-image img-circle elevation-3 " style="opacity: .8">
-               <span class="brand-text font-weight-heavy font-RO">Dashboard</span>
+               <span class="brand-text font-weight-heavy font-RO">CRM</span>
              </a>
 
 

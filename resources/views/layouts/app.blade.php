@@ -35,6 +35,8 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<!-- font awesome -->
+<script src="https://use.fontawesome.com/62e8d6d224.js"></script>
 
 
 </head>

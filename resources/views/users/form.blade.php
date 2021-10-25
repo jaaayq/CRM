@@ -23,8 +23,8 @@
 <div class="mt-4">
     
         
-    <x-jet-label class="text-black font-RO" for="roles" value="{{ __('Role:') }}" /> <br>
-    <select name="roles" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
+    <x-jet-label class="text-black font-RO" for="role" value="{{ __('Role:') }}" /> <br>
+    <select name="role" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
         
        
    <option value="admin">Admin</option> 

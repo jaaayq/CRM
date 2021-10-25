@@ -10,28 +10,27 @@ use Illuminate\Http\Requests;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Hash;
+use Ramsey\Uuid\Type\Integer;
 use Symfony\Component\HttpFoundation\Response;
+use Throwable;
 
 class UsersController extends Controller
 {
     public function index()
     {
-     
-        
 
-        return view('admin.users.index', ['users'=> User::paginate(10)]);
+        return view('admin.users.index', ['users'=> User::withoutTrashed()->paginate(10)]);
 
-
-       /* $users = User::with('roles')->get();
-        return view('users.index', compact('users'));*/
     }
 
+    
     public function create()
     {
-      
-
-        return view('users.create', ['roles' => Role::all()]);
+    
+        return view('users.create', ['role' => Role::all()]);
     }
+
+
 
     public function store(StoreUserRequest $request)
     {
@@ -41,7 +40,7 @@ class UsersController extends Controller
         $user -> email = $request->email;
         $user -> password = Hash::make( $request->password); 
         
-        $user -> roles = $request->roles;
+        $user -> role = $request->role;
         $user->save();
 
         $notification = array(
@@ -65,7 +64,7 @@ class UsersController extends Controller
 
         return view('users.edit', 
        [
-          'roles' => Role::all(),
+          'role' => Role::all(),
           'user'=> User::find($id)
      ]);
 
@@ -80,7 +79,7 @@ class UsersController extends Controller
         $user = User::find($id);
         $user-> name = $request->input('name');
         $user-> email = $request->input('email');
-        $user-> roles = $request->input('roles');
+        $user-> role = $request->input('role');
         
 
        $user->save();
@@ -104,7 +103,51 @@ class UsersController extends Controller
         return redirect()->route('users.index');*/
    
         User::destroy($id);
+        $notification = array(
+            'message' => ' Account Deleted ',
+            'alert-type' => 'error');
 
-        return redirect(route('users.index'));
+        return redirect()->route('users.index')->with($notification);
     }
-}
+
+/***
+ * Update status of user
+ * @param Integer $user_id
+ *  @param Integer $status_code
+ *  return success
+ */
+
+    public function updatestatus($user_id, $status_code)
+    {
+
+        $notificationsuccess = array(
+            'message' => ' Account status updated',
+            'alert-type' => 'warning'
+        );
+
+        $notificationfail = array(
+            'message' => ' User status update fail',
+            'alert-type' => 'error'
+        );
+
+        try {
+
+            $update_user = User::whereId($user_id)->update([
+                'status' => $status_code
+            ]);
+           
+
+            if($update_user){
+                return redirect()->route('users.index')->with($notificationsuccess);
+            }
+
+
+            return redirect()->route('users.index')->with($notificationfail);
+
+        }catch (Throwable $th) {
+            throw $th;
+        }
+
+        }
+    }
+

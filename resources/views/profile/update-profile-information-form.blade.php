@@ -43,7 +43,7 @@
                 </x-jet-secondary-button>
 
                 @if ($this->user->profile_photo_path)
-                    <x-jet-secondary-button type="button" class="mt-2" wire:click="deleteProfilePhoto">
+                    <x-jet-secondary-button type="button" class="mt-2 " wire:click="deleteProfilePhoto">
                         {{ __('Remove Photo') }}
                     </x-jet-secondary-button>
                 @endif
@@ -55,14 +55,14 @@
         <!-- Name -->
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="name" value="{{ __('Name') }}" />
-            <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="state.name" autocomplete="name" />
+            <x-jet-input id="name" type="text" class="block mt-1 w-full px-3 py-1 rounded-lg" wire:model.defer="state.name" autocomplete="name" />
             <x-jet-input-error for="name" class="mt-2" />
         </div>
 
         <!-- Email -->
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="email" value="{{ __('Email') }}" />
-            <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
+            <x-jet-input id="email" type="email" class="block mt-1 w-full px-3 py-1 rounded-lg" wire:model.defer="state.email" />
             <x-jet-input-error for="email" class="mt-2" />
         </div>
     </x-slot>

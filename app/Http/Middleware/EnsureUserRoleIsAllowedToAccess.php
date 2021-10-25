@@ -24,7 +24,7 @@ class EnsureUserRoleIsAllowedToAccess
        // echo 'middleware gate. <br>';
 
 
-        $userRole= auth()->user()->roles;
+        $userRole= auth()->user()->role;
 
         $currentRouteName = Route::currentRouteName();
         
@@ -60,6 +60,8 @@ class EnsureUserRoleIsAllowedToAccess
                     'createactivity',
                     'joinactivity',
                     'aboutus',
+                    'activity.status.update',
+                    'view.createactivity'
                   
                 ],
                 'admin' => [
@@ -70,7 +72,8 @@ class EnsureUserRoleIsAllowedToAccess
                     'users.destroy',              
                     'user.edit',
                     'users.update',
-                    'aboutus'
+                    'aboutus',
+                    'users.status.update'
                   
                     
             

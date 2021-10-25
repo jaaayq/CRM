@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Create users</title>
+    <title>CRM Admin</title>
 
  
     <!-- Fonts -->
@@ -12,6 +12,7 @@
 
  <!-- Styles -->
  <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
 
  @livewireStyles
 
@@ -34,7 +35,8 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-
+<!-- font awesome -->
+<script src="https://use.fontawesome.com/62e8d6d224.js"></script>
 </head>
 
 
@@ -58,9 +60,12 @@
            <!-- Main Sidebar Container -->
            <aside class="main-sidebar sidebar-dark-primary elevation-4">
              <!-- Brand Logo -->
+            
+            
+          
              <a href="{{ route('users.index') }}" class="brand-link">
                <img src="{{asset('dist/img/dostlogo.png')}}" alt="CRM Logo" class="brand-image img-circle elevation-3 " style="opacity: .8">
-               <span class="brand-text font-weight-heavy font-RO"> Dashboard</span>
+               <span class="brand-text font-weight-heavy font-RO"> CRM</span>
              </a>
 
 
@@ -80,7 +85,7 @@
          
                      <a href="#" class="d-block font-RO "> 
                        &nbsp;
-                       <i class="fas fa-user"></i> &nbsp;
+                       <i class="fas fa-user-tie"></i> &nbsp;
                        {{Auth::user()->name}} 
                      </a>
          
@@ -172,6 +177,8 @@
  
 
 <!-- REQUIRED SCRIPTS -->
+<!-- font awesome -->
+<script src="https://use.fontawesome.com/62e8d6d224.js"></script>
 <!-- jQuery -->
 <script src={{ asset('plugins/jquery/jquery.min.js') }}></script>
 <!-- Bootstrap -->
@@ -233,19 +240,19 @@ $(function(){
        e.preventDefault();
        var link = $(this).attr("href");
        Swal.fire({
-           title: 'Are you sure you want to delete this activity?',
+           title: 'Are you sure you want to delete this account?',
            text: "You won't be able to revert this!",
            icon: 'warning',
            showCancelButton: true,
            confirmButtonColor: '#3085d6',
            cancelButtonColor: '#d33',
-           confirmButtonText: 'Yes, Delete Activity!'
+           confirmButtonText: 'Yes, Delete Account!'
        }).then((result) =>  {
            if (result.value) {
                window.location.href = link;
                Swal.fire(
                    'Deleted',
-                   'You Activity has been deleted.',
+                   'Account has been deleted.',
                    'success'
                )
            }

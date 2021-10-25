@@ -60,7 +60,12 @@
                                            
                                             @if (session('message'))
                                             <div class="text-red-500 text-xs py-1"><strong>{{session('message')}}</strong></div>       
-                                            @endif    
+                                            @endif 
+
+                                            @if (session('feedbackmessage'))
+                                            <div class="text-red-500 text-xs py-1"><strong>{{session('message')}}</strong></div>       
+                                            @endif 
+
 
                                             @if (session('SMESSAGE'))
                                             <div class="text-green-500 text-xs py-1"><strong>{{session('SMESSAGE')}}</strong></div>       

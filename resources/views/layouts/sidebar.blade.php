@@ -52,7 +52,7 @@
            
             <a href="{{ route('dashboard') }}" class="nav-link font-RO {{ ($route=='dashboard')?'active':'' }}">
               
-            <i class="fas fa-columns"></i>
+            <i class="fas fa-chart-line"></i>
               <p>Dashboard</p>
             </a>
 
@@ -62,7 +62,7 @@
 
             <a href="{{ route('view.createactivity') }}" class="nav-link font-RO {{ ($route=='view.createactivity')?'active':'' }}">
                 
-              <i class="fas fa-plus-circle"></i>
+              <i class="fas fa-calendar-plus"></i>
               <p>Create Activity</p>
                 
             </a>

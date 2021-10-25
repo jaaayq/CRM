@@ -9,6 +9,7 @@ use App\Http\Controllers\feedbackController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ChartJsController;
 use App\Http\Controllers\UsersController;
+use App\Models\activity1;
 use Illuminate\Routing\Route as RoutingRoute;
 
 /*
@@ -84,8 +85,14 @@ Route::group(['middleware' => [
     Route::resource('tasks', \App\Http\Controllers\TasksController::class);
     Route::resource('users', \App\Http\Controllers\UsersController::class);
 
+    //Deactivate user
+
+    Route::get('/users/status/{user_id}/{status_code}', [UsersController::class, 'updatestatus'])->name('users.status.update');
+
 });
 
+
+ 
 
 Route::get('/', function () {
     return view('auth.login');
@@ -113,6 +120,10 @@ Route::post('store',  [activityController::class, 'store'])->name('store.createa
 Route::post('/update/{id}',  [activityController::class, 'update'])->name('update.createactivity');
 Route::get('delete/{id}',  [activityController::class, 'delete'])->name('delete.createactivity');
 Route::get('edit/{id}',  [activityController::class, 'edit'])->name('edit.createactivity');
+
+//Deactivate formfeedback
+
+Route::get('/users/status/{act_id}/{act_status}', [activityController::class, 'updateactivitystatus'])->name('activity.status.update');
 
 
 
@@ -174,5 +185,7 @@ Route::prefix('aboutus')->group(function()
 //user join
 
 Route::get('cms', [activityController::class, 'viewactivity']);
+
+
 
 
