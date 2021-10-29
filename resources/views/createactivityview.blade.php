@@ -29,8 +29,8 @@
                                         <tr>
                                             <th style="font-family:Inter; font-size: 12px">Activity No.</th>
                                             <th style="font-family:Inter; font-size: 12px">Activity Name</th>
-                                            <th style="font-family:Inter; font-size: 12px">Date of Activity</th>
-                                            <th style="font-family:Inter; font-size: 12px">Date Finished</th>
+                                            <th style="font-family:Inter; font-size: 12px">Start Time</th>
+                                            <th style="font-family:Inter; font-size: 12px">Finish Time</th>
                                             <th style="font-family:Inter; font-size: 12px">Activity Description</th>
                                             <th style="font-family:Inter; font-size: 12px">Activity Code</th>
 

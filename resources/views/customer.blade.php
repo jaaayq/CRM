@@ -63,7 +63,7 @@
                                             @endif 
 
                                             @if (session('feedbackmessage'))
-                                            <div class="text-red-500 text-xs py-1"><strong>{{session('message')}}</strong></div>       
+                                            <div class="text-red-500 text-xs py-1"><strong>{{session('feedbackmessage')}}</strong></div>       
                                             @endif 
 
 

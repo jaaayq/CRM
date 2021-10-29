@@ -24,7 +24,7 @@ class CheckAccountStatus
             $request->session()->regenerateToken();
 
 
-            return redirect()->route('login')->with('error', 'Your account is de-activated. Please contact your administrator!');
+            return redirect()->route('login')->with('error', 'Your account is deactivated. Please contact your administrator!');
         }
         
 

@@ -33,6 +33,20 @@
  {{--CREATE ACITVITY BLADE--}}
 
         <section class="col-md-12">
+
+          @if ($errors->any())
+          <div class="alert alert-danger">
+          <ul>
+          @foreach ($errors->all() as $error)
+          <li class="text-white"> {{$error}} </li>
+            
+          @endforeach
+          </ul>
+          </div>
+            
+          @endif
+
+
             <div class="card card-info">
                 <div class="card-header ">
                 <h3 class="card-title font-RO">
@@ -47,19 +61,7 @@
                 </div>
                 <div class="card-body">
 
-                  @if ($errors->any())
-                  <div class="w-4/8 m-auto text-center">
-                  
-                  @foreach ($errors->all() as $error)
-                  <li class="text-red-500 list-none">
-                      {{$error}}
-                  </li>
-                    
-                  @endforeach
-                  
-                  </div>
-                    
-                  @endif
+                
 
 
                     <form method="POST" action="{{ (@$editdata)?route('update.createactivity', $editdata->id): route('store.createactivity') }}" enctype="multipart/form-data">
@@ -74,7 +76,7 @@
                             </div>
 
                         <div class="form-group col-sm-6">
-                            <label>Date and time:</label>
+                            <label>Start time:</label>
                          <div class="input-group date" id="reservationdatetime" data-target-input="nearest">
                             <input type="text" name="activitydate" class="form-control" required value="{{ (@$editdata->activitydate) }}" datetimepicker-input" data-target="#reservationdatetime"/>
                         <div class="input-group-append" data-target="#reservationdatetime" data-toggle="datetimepicker">
@@ -94,7 +96,7 @@
 
                         <div class="form-group col-sm-6">
                           
-                          <label>Date Finish:</label>
+                          <label>Finish Time:</label>
                           <div class="input-group date" id="finishtime" data-target-input="nearest">
                              <input type="text" name="date_finished" class="form-control" required value="{{ (@$editdata->date_finished) }}" datetimepicker-input data-target="#finishtime"/>
                          <div class="input-group-append" data-target="#finishtime" data-toggle="datetimepicker">

@@ -40,35 +40,35 @@ class activityController extends Controller
     }
 
 
+
+    //functions for customer code
     public function viewactivity(Request $request){
 
 
     
-    // $request=Input::get('code');
+
     $code = $request->input('code');
 
-
-     //  $code = Input::get('code');
-
-      if (DB::table('activity1s')->where('activitycode', $code)->exists() && ('activity_status')==1){
+      if (DB::table('activity1s')->where([
+          ['activitycode', $code],
+          ['activity_status', '1']
+          ])->exists()){
            
          return view('joinactivity');
 
 
-   
-      
-     }elseif (DB::table('activity1s')->where('activitycode', $code)->exists() && ('activity_status')==0){
+     }elseif (DB::table('activity1s')->where([
+        ['activitycode', $code],
+        ['activity_status', '0']
+        ])->exists()){
 
-        return redirect('customer')->with('feedbackmessage', 'FEEDBACK FOR CODE IS DISABLED');
+        return redirect('customer')->with('feedbackmessage', 'FEEDBACK IS DISABLED ');
 
 
      }else{
 
 
-        return redirect('customer')->with('message', 'CODE DOES NOT EXIST');
-
-            // abort(403, 'Code does not exist');
-
+    return redirect('customer')->with('message', 'CODE DOES NOT EXIST');
             
         
             
@@ -83,8 +83,8 @@ class activityController extends Controller
     public function store(Request $request)
     {
              $request->validate([
-            'activitydate'=> new SelectDateRule,
-            'date_finished'=> new SelectDateRule,
+            'activitydate'=> ['required',new SelectDateRule],
+            'date_finished'=> ['required','after:activitydate',new SelectDateRule],
             'activitycode'=>'unique:activity1s',
 
         ]);
@@ -217,6 +217,7 @@ class activityController extends Controller
           }
   
           }
+
 
 
 }

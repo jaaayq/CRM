@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\feedback2;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 class feedbackController extends Controller
 {
      //
@@ -87,5 +89,37 @@ class feedbackController extends Controller
 
 
 
+    //barchart controller
+    public function viewfbchart()
+    {
+
+        $current_month_fb = feedback2::whereYear('created_at',Carbon::now()->year)->whereMonth
+        ('created_at',Carbon::now()->month)->count();
+        
+        $last_month_fb = feedback2::whereYear('created_at',Carbon::now()->year)->whereMonth
+        ('created_at',Carbon::now()->subMonth(1))->count();
+    
+        $gendermale = feedback2::where('feedbackgender', 'male')->count();
+        $genderfemale = feedback2::where('feedbackgender', 'female')->count();
+       // $count[] = array ('gendermale');
+
+       $feedbackcount = DB::table('feedback2s')->count();
+
+
+
+  
+     return view('dashboard', compact('feedbackcount'));
+
+     
+
+    }
+
+   
+
+
+
+
 
       }
+
+      

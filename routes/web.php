@@ -68,9 +68,9 @@ Route::group(['middleware' => [
     
 ]], function () {
 
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+  //  Route::get('/dashboard', function () {
+  //      return view('dashboard');
+  //  })->name('dashboard');
 
 
     Route::get('/aboutus', function () {
@@ -88,6 +88,7 @@ Route::group(['middleware' => [
     //Deactivate user
 
     Route::get('/users/status/{user_id}/{status_code}', [UsersController::class, 'updatestatus'])->name('users.status.update');
+    Route::get('dashboard', [feedbackController::class, 'viewfbchart'])->name('dashboard');
 
 });
 
