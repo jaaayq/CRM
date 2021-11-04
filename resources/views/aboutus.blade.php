@@ -17,7 +17,7 @@
 
           @endphp
         <section class="col-md-12 font-RO ">
-            <div class="card card-info">
+            <div class="card card-primary">
                 <div class="card-header">
                 <h3 class="card-title">
                     ABOUT THE SYSTEM

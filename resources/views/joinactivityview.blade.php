@@ -10,7 +10,7 @@
 
         <!-- Main content -->
         <section class="col-md-12">
-            <div class="card card-info">
+            <div class="card card-primary">
                 <div class="card-header ">
                 <h3 class="card-title font-RO">FEEDBACK LOG</h3>
                 </div>

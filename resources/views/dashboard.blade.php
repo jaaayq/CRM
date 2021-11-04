@@ -6,58 +6,12 @@
 
 {{--MAIN DASHBOARD BLADE--}}
 
-<?php
- 
-$dataPoints = array(
-	array("x"=> 10, "y"=> 41),
-	array("x"=> 20, "y"=> 35, "indexLabel"=> "Lowest"),
-	array("x"=> 30, "y"=> 50),
-	array("x"=> 40, "y"=> 45),
-	array("x"=> 50, "y"=> 52),
-	array("x"=> 60, "y"=> 68),
-	array("x"=> 70, "y"=> 38),
-	array("x"=> 80, "y"=> 71, "indexLabel"=> "Highest"),
-	array("x"=> 90, "y"=> 52),
-	array("x"=> 100, "y"=> 60),
-	array("x"=> 110, "y"=> 36),
-	array("x"=> 120, "y"=> 49),
-	array("x"=> 130, "y"=> 41)
-);
-	
-?>
 
-<script>
-  window.onload = function () {
-   
-  var chart = new CanvasJS.Chart("chartContainer", {
-    animationEnabled: true,
-    exportEnabled: true,
-    theme: "dark2", // "light1", "light2", "dark1", "dark2"
-    title:{
-      text: "Statistics for Feedback"
-    },
-    axisY:{
-      includeZero: true
-    },
-    data: [{
-      type: "column", //change type to bar, line, area, pie, etc
-      //indexLabel: "{y}", //Shows y value on all Data Points
-      indexLabelFontColor: "#5A5757",
-      indexLabelPlacement: "outside",   
-      dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-    }]
-  });
-  chart.render();
-   
-  }
-  </script>
+
 
 @php
 $feedbackcount = DB::table('feedback2s')->count();
 $activitycount =  DB::table('activity1s')->count();
-
-$gendermale = DB::table('feedback2s')->where('feedbackgender', 'male')->count();
-$genderfemale = DB::table('feedback2s')->where('feedbackgender', 'female')->count();
 
 
 @endphp
@@ -73,7 +27,7 @@ $genderfemale = DB::table('feedback2s')->where('feedbackgender', 'female')->coun
               <!-- /.col -->
               <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box mb-3">
-                  <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
+                  <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-thumbs-up"></i></span>
 
                   <div class="info-box-content">
                     <span class="info-box-text ">FEEDBACKS</span>
@@ -90,7 +44,7 @@ $genderfemale = DB::table('feedback2s')->where('feedbackgender', 'female')->coun
 
               <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box mb-3">
-                  <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
+                  <span class="info-box-icon bg-success elevation-1"><i class="fas fa-users"></i></span>
 
                   <div class="info-box-content">
                     <span class="info-box-text ">CREATED ACTIVITIES</span>
@@ -106,7 +60,7 @@ $genderfemale = DB::table('feedback2s')->where('feedbackgender', 'female')->coun
 
 
             <!-- BAR CHART -->
-            <div class="card card-info">
+            <div class="card card-primary">
                 <div class="card-header">
                 <h3 class="card-title font-RO">Bar Chart</h3>
 
@@ -123,21 +77,49 @@ $genderfemale = DB::table('feedback2s')->where('feedbackgender', 'female')->coun
                
        
 
+                              <!-- Chart's container -->
+                <div id="chart" style="height: 300px;"></div>
+
+             
+                    
+                
 
 
 
+            
+                <script>
 
-                  <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                  const fbchart = new Chartisan({
+                    el: '#chart',
+                    url: "{{ route('charts.feedback_chart') }}",
+                    hooks: new ChartisanHooks()
+                    .beginAtZero()
+                    .colors(['#f8a5c2','#34ace0']),
+                    
+                  });
+
+                </script>
+
+
+                
+                 
 
   
                 </div>
                 </div>
                 <!-- /.card-body -->
             </div>
-            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+             <!-- Charting library -->
+             <script src="https://unpkg.com/chart.js@^2.9.3/dist/Chart.min.js"></script>
+             <!-- Chartisan -->
+             <script src="https://unpkg.com/@chartisan/chartjs@^2.1.0/dist/chartisan_chartjs.umd.js"></script>
+
+
+
+           
         </section>
-
-
+                 
       <!-- Main Footer -->
     </x-slot>
 

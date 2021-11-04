@@ -47,7 +47,7 @@
           @endif
 
 
-            <div class="card card-info">
+            <div class="card card-primary">
                 <div class="card-header ">
                 <h3 class="card-title font-RO">
                     @if (isset($editdata))

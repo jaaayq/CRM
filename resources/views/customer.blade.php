@@ -53,7 +53,8 @@
                                     <div class="form text-gray-200 text-center">
                                         
 
-                                        <form action="cms" method="GET">
+                                        <form action="{{ route('customercode') }}" method="POST">
+
                                             @csrf
 
                                             <label class=" text-white left-full">CUSTOMER CODE<br></label>  <br> 
@@ -84,6 +85,7 @@
                                              
                                              
                                         </form>
+                                        
                                 
                                    
 

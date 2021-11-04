@@ -10,7 +10,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ChartJsController;
 use App\Http\Controllers\UsersController;
 use App\Models\activity1;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Routing\Route as RoutingRoute;
+use Illuminate\Support\Facades\Request as FacadesRequest;
 
 /*
 |--------------------------------------------------------------------------
@@ -156,9 +159,10 @@ Route::get('customer',  [feedbackController::class, 'customer'])->name('customer
 
 Route::prefix('joinactivity')->group(function()
 {
-    Route::get('viewjoin',  [activityController::class, 'viewjoin'])->name('viewjoin.joinactivity');
+    Route::get('viewjoin',  [activityController::class, 'viewjoin'])->name('viewjoin.joinactivity')->middleware('signed');
 
 });
+
 
 
 //JOINACTIVITY
@@ -183,9 +187,13 @@ Route::prefix('aboutus')->group(function()
 
 });
 
-//user join
+//Feedback Form
+Route::prefix('Customer')->group(function()
+{
+Route::post('Feedback', [activityController::class, 'viewactivity'])->name('customercode');
 
-Route::get('cms', [activityController::class, 'viewactivity']);
+});
+
 
 
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\feedback2;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use app\Charts\FeedbackChart;
 class feedbackController extends Controller
 {
      //
