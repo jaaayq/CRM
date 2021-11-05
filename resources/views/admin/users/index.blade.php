@@ -2,12 +2,25 @@
     <x-slot name="header">
 
 <!-- Main content -->
+
+
+
+
+
+
+
+
 <section class="content">
+ 
+    
+               
   <div class="container-fluid font-RO">
 
 
       <div class="row"> 
         <div  class="col-12">
+
+          
 
         <h2 class="float-left" style="font-size: 25px"> Users List  </h2>
            
@@ -23,6 +36,8 @@
 
 
         <div class="card">
+          
+            
           
   
          
@@ -49,7 +64,7 @@
 
                           @if ($user->status == 1)
 
-                          <a title="De-activate" class="btn btn-sm btn-success " href="{{ route('users.status.update', ['user_id' => $user->id, 'status_code'=>0]) }}" role="button"><i class="fas fa-toggle-on"></i></a>
+                          <a title="Deactivate" class="btn btn-sm btn-success " href="{{ route('users.status.update', ['user_id' => $user->id, 'status_code'=>0]) }}" role="button"><i class="fas fa-toggle-on"></i></a>
                           
                           @else
 

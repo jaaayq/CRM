@@ -195,6 +195,8 @@ Route::post('Feedback', [activityController::class, 'viewactivity'])->name('cust
 });
 
 
+//Redirect Route
 
+Route::get('Homepage', [UsersController::class, 'Redirect'])->name('redirectpage');
 
 

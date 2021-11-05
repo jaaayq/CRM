@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CRM Admin</title>
+    <title>CRM Account Settings</title>
 
  
     <!-- Fonts -->
@@ -60,10 +60,9 @@
            <!-- Main Sidebar Container -->
            <aside class="main-sidebar sidebar-dark-primary elevation-4">
              <!-- Brand Logo -->
-            
-            
+      
           
-             <a href="{{ route('users.index') }}" class="brand-link">
+             <a href="{{ route('redirectpage') }}" class="brand-link">
                <img src="{{asset('dist/img/dostlogo.png')}}" alt="CRM Logo" class="brand-image img-circle elevation-3 " style="opacity: .8">
                <span class="brand-text font-weight-heavy font-RO"> CRM</span>
              </a>

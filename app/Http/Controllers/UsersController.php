@@ -6,6 +6,7 @@ use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Models\Role;
 use App\Models\User;
+
 use Illuminate\Http\Requests;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Hash;
 use Ramsey\Uuid\Type\Integer;
 use Symfony\Component\HttpFoundation\Response;
 use Throwable;
+
 
 class UsersController extends Controller
 {
@@ -109,6 +111,10 @@ class UsersController extends Controller
 
         return redirect()->route('users.index')->with($notification);
     }
+    
+
+
+
 
 /***
  * Update status of user
@@ -149,5 +155,29 @@ class UsersController extends Controller
         }
 
         }
+
+        public function Redirect()
+        {
+
+           
+            $user= auth()->user()->role == 'admin';
+            
+
+
+            if($user){
+                return redirect()->route('users.index');
+            }   
+                // or return route('routename');
+            
+        
+            return redirect('dashboard');
+            // or return route('routename');
+                 
+            
+      
+        }
     }
+
+
+  
 
