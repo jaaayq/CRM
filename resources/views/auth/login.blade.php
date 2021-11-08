@@ -21,12 +21,12 @@
     @endif
 
 
-        <form method="POST" action="{{ route('login') }}">
+        <form method="POST" action="{{ route('login') }}"  autocomplete="off">
             @csrf
 
             <div>
-                <x-jet-label class="text-white" for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full px-3 py-1  rounded-lg " type="email" name="email" :value="old('email')" required autofocus  />
+                <x-jet-label class="text-white" for="login" value="{{ __('Username') }}" />
+                <x-jet-input id="login" class="block mt-1 w-full px-3 py-1  rounded-lg " type="text" name="login" :value="old('username')" required autofocus  />
             </div>
 
             <div class="mt-4">
@@ -34,14 +34,9 @@
                 <x-jet-input id="password" class="block mt-1 w-full px-3 py-1  rounded-lg" type="password" name="password" required autocomplete="current-password" />
             </div>
 
-            <div class="block mt-4">
-                <label  class="text-white" for="remember_me" class="flex items-center">
-                    <x-jet-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
+       
 
-            <div class="flex items-center justify-end mt-4">
+            <div class=" items-center justify-end mt-4">
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-white hover:text-gray-900" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}

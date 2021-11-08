@@ -6,7 +6,7 @@
         <!-- /.content-header -->
 
 
-
+       
 
 {{--FEEDBACK FORM BLADE--}}
 
@@ -19,7 +19,8 @@
     
         <div class="card card-info">
             <div class="card-header">
-            <h3 class="card-title">CUSTOMER SATISFACTION FEEDBACK FORM</h3>
+            <h3 class="card-title">CUSTOMER FEEDBACK FORM ({!!$code!!})</h3>
+          
             </div>
             <!-- /.card-header -->
             <div class="card-body bg-gray-1300 font-RO text-sm">

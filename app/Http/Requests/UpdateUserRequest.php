@@ -14,6 +14,12 @@ class UpdateUserRequest extends FormRequest
                 'string',
                 'required',
             ],
+
+            'username'    => [
+                'required',
+                'max:20',
+            ],
+
             'email'   => [
                 'required',
                 
@@ -22,6 +28,7 @@ class UpdateUserRequest extends FormRequest
             'roles.*' => [
                 'string',
             ],
+
             'role'   => [
                
                 'string',

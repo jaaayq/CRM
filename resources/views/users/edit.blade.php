@@ -8,7 +8,7 @@
                 <h1 class="text-center text-white font-RO">EDIT USERS</h1> <br>
                 <x-jet-validation-errors class="mb-4" />
         
-                <form method="POST" action="{{ route('users.update', $user->id) }}">
+                <form method="POST" action="{{ route('users.update', $user->id) }}"  autocomplete="off">
                     @method('PATCH')
                     @csrf
         
@@ -16,6 +16,12 @@
                         <x-jet-label class="text-black font-RO" for="name" value="{{ __('Name') }}" /> 
                         <input id="name "  class="text-black bg-white block mt-1 w-full px-3 py-1 rounded-lg " type="text"   name="name" autofocus autocomplete="name" required value={{ old('name') }}
                         @isset($user) {{$user->name}} @endisset> 
+                    </div>
+
+                    <div class="mt-4">
+                        <x-jet-label class="text-black font-RO" for="email" value="{{ __('Username') }}" />
+                        <input id="username" class="text-black bg-white w-full px-3 py-1 rounded-lg" type="text" name="username"  required value={{ old('username') }}
+                         @isset($user) {{$user->username}} @endisset>
                     </div>
                     
                     <div class="mt-4">

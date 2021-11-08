@@ -36,9 +36,11 @@ class UsersController extends Controller
 
     public function store(StoreUserRequest $request)
     {
+  
 
         $user = new User();
         $user -> name = $request->name;
+        $user -> username = $request->username;
         $user -> email = $request->email;
         $user -> password = Hash::make( $request->password); 
         
@@ -80,6 +82,7 @@ class UsersController extends Controller
     {
         $user = User::find($id);
         $user-> name = $request->input('name');
+        $user-> username = $request->input('username');
         $user-> email = $request->input('email');
         $user-> role = $request->input('role');
         

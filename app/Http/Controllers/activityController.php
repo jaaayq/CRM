@@ -24,6 +24,8 @@ class activityController extends Controller
 
     public function viewjoin(){
 
+       
+
         return view('joinactivity');
     }
 
@@ -48,13 +50,17 @@ class activityController extends Controller
     
 
     $code = $request->input('code');
+    
 
       if (DB::table('activity1s')->where([
           ['activitycode', $code],
           ['activity_status', '1']
           ])->exists()){
            
-         return view('joinactivity');
+         return view('joinactivity', compact('code'));
+         
+         
+        
 
 
      }elseif (DB::table('activity1s')->where([

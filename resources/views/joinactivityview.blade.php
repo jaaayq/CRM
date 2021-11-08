@@ -23,6 +23,7 @@
                                     <thead>
                                         <tr>
                                             <th style="font-size: 12px">Feedback ID.</th>
+                                            <th style="font-size: 12px">Activity Code</th>
                                             <th style="font-size: 12px">Company Name</th>
                                             <th style="font-size: 12px">Date</th>
                                             <th style="font-size: 12px">Address</th>
@@ -69,6 +70,7 @@
                                     @foreach ($alldata as $key => $data)
                                     <tr>
                                         <td>{{ $key+1 }}</td>
+                                        
                                         <td>{{ $data->feedbackcompanyname }}</td>
                                         <td>{{ $data->feedbackdate }}</td>
                                         <td>{{ $data->feedbackaddress }}</td>

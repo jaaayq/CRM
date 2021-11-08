@@ -6,13 +6,20 @@
 
         <x-jet-validation-errors class="mb-4" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register') }}" autocomplete="off">
             @csrf
 
             <div>
                 <x-jet-label class="text-white" for="name" value="{{ __('Name') }}" />
                 <x-jet-input id="name" class="block mt-1 w-full px-3 py-1 rounded-lg" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
+
+            <div class="mt-4">
+                <x-jet-label class="text-white" for="username" value="{{ __('Username') }}" />
+                <x-jet-input id="username" class="block mt-1 w-full px-3 py-1 rounded-lg" type="text" name="username" :value="old('username')" required autofocus autocomplete="username" />
+            </div>
+
+           
 
             <div class="mt-4">
                 <x-jet-label class="text-white" for="email" value="{{ __('Email') }}" />

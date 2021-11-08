@@ -6,11 +6,21 @@
     @isset($user) {{$user->name}} @endisset> 
 </div>
 
+
+<div class="mt-4">
+    <x-jet-label class="text-black font-RO" for="email" value="{{ __('Username') }}" />
+    <input id="username" class="text-black bg-white w-full px-3 py-1 rounded-lg" type="text" name="username"  required value={{ old('username') }}
+     @isset($user) {{$user->username}} @endisset>
+</div>
+
 <div class="mt-4">
     <x-jet-label class="text-black font-RO" for="email" value="{{ __('Email') }}" />
     <input id="email" class="text-black bg-white w-full px-3 py-1 rounded-lg" type="email" name="email"  required value={{ old('email') }}
      @isset($user) {{$user->email}} @endisset>
 </div>
+
+
+
 @isset($create)
     
 
@@ -20,6 +30,10 @@
 </div>
 
 @endisset
+
+
+
+
 <div class="mt-4">
     
         
