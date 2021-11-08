@@ -94,7 +94,9 @@ $activitycount =  DB::table('activity1s')->count();
                     url: "{{ route('charts.feedback_chart') }}",
                     hooks: new ChartisanHooks()
                     .beginAtZero()
-                    .colors(['#f8a5c2','#34ace0']),
+                    .datasets('pie')
+                    .pieColors(['#f8a5c2','#34ace0']),
+                    //.colors(['#f8a5c2','#34ace0']),
                     
                   });
 

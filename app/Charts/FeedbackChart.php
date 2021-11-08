@@ -26,8 +26,9 @@ class FeedbackChart extends BaseChart
 
 
         return Chartisan::build()
-            ->labels(['Gender'])
-            ->dataset('Female', [$genderfemale])
-            ->dataset('Male', [$gendermale]);
+            ->labels(['Female','Male'])
+            ->dataset('Gender', [$genderfemale,$gendermale]);
+            
+            
     }
 }
