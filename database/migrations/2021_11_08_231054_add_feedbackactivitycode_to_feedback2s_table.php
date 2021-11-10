@@ -14,7 +14,7 @@ class AddFeedbackactivitycodeToFeedback2sTable extends Migration
     public function up()
     {
         Schema::table('feedback2s', function (Blueprint $table) {
-            $table->string('username')->after('name');
+            $table->string('feedbackactivitycode')->after('id');
         });
     }
 
@@ -26,7 +26,7 @@ class AddFeedbackactivitycodeToFeedback2sTable extends Migration
     public function down()
     {
         Schema::table('feedback2s', function (Blueprint $table) {
-            //
+        $table->dropColumn('feedbackactivitycode');
         });
     }
 }

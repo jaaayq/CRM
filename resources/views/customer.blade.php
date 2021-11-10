@@ -53,7 +53,7 @@
                                     <div class="form text-gray-200 text-center">
                                         
 
-                                        <form action="{{ route('customercode')}}" method="POST">
+                                        <form action="{{ route('customercode')}}" method="POST" autocomplete="off">
 
                                             @csrf
 

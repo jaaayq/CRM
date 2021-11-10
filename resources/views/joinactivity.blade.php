@@ -25,8 +25,12 @@
             <!-- /.card-header -->
             <div class="card-body bg-gray-1300 font-RO text-sm">
                 <!--border --> <div class="border-gray-1200 border-l border-r border-dashed">
-                <form class="center border-2 border-transparent" method="POST" action="{{ route('store.createfeedback') }}" enctype="multipart/form-data"  >
+
+                <form class="center border-2 border-transparent" method="POST" action="{{ route('store.createfeedback') }}" enctype="multipart/form-data" autocomplete="off"  >
                     @csrf
+
+                    <input type="hidden" name="feedbackactivitycode" value="{!!$code!!}" readonly><br>
+
                     <div class="form-row">
                     <div class="form-group col-sm-6 ">
                         <label>Name of Company</label>

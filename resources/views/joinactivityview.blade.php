@@ -70,7 +70,7 @@
                                     @foreach ($alldata as $key => $data)
                                     <tr>
                                         <td>{{ $key+1 }}</td>
-                                        
+                                        <td>{{ $data->feedbackactivitycode }}</td>
                                         <td>{{ $data->feedbackcompanyname }}</td>
                                         <td>{{ $data->feedbackdate }}</td>
                                         <td>{{ $data->feedbackaddress }}</td>

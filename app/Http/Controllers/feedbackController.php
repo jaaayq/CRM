@@ -23,6 +23,7 @@ class feedbackController extends Controller
     {
 
         $data = new feedback2;
+        $data -> feedbackactivitycode = $request->feedbackactivitycode;
         $data -> feedbackcompanyname = $request->feedbackcompanyname;
         $data -> feedbackdate = $request->feedbackdate;
         $data -> feedbackaddress = $request->feedbackaddress;
