@@ -78,7 +78,7 @@
                         </a>
                     
                         <x-jet-button class="ml-4">
-                            {{ __('Create') }}
+                            {{ __('Update') }}
                         </x-jet-button>
                     </div>
                     </div>

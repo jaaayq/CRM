@@ -36,12 +36,13 @@
 
        
 
-            <div class=" items-center justify-end mt-4">
-                @if (Route::has('password.request'))
+            <div class=" pl-36 items-center justify-end mt-4">
+
+              <!--  @if (Route::has('password.request'))
                     <a class="underline text-sm text-white hover:text-gray-900" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
-                @endif
+                @endif -->
 
                 <x-jet-button class="ml-4">
                     {{ __('Log in') }}
