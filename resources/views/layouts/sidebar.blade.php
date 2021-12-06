@@ -52,7 +52,7 @@
            
             <a href="{{ route('dashboard') }}" class="nav-link font-RO {{ ($route=='dashboard')?'active':'' }}">
               
-            <i class="fas fa-chart-line"></i>
+              <i class="fas fa-chart-pie"></i>
               <p>Dashboard</p>
             </a>
 
@@ -69,6 +69,15 @@
 
           </li>
 
+          <li class="nav-item  {{ ($prefix=='aboutus')?'menu-open':''}}">
+
+            <a href="{{ route('feedbackstatistics') }}" class="nav-link font-RO {{ ($route=='feedbackstatistics')?'active':'' }}">    
+              <i class="fas fa-chart-line"></i>
+              <p> Feedback Statistics</p>   
+            </a>
+
+          </li>
+
           <li class="nav-item {{ ($prefix=='joinactivityview')?'menu-open':''}}">
 
             <a href="{{ route('joinactivityview') }}" class="nav-link font-RO {{ ($route=='joinactivityview')?'active':'' }}">
@@ -79,10 +88,12 @@
 
           </li>
 
+       
+
           <li class="nav-item  {{ ($prefix=='aboutus')?'menu-open':''}}">
 
             <a href="{{ route('viewaboutus.aboutus') }}" class="nav-link font-RO {{ ($route=='viewaboutus.aboutus')?'active':'' }}">    
-              <i class="fas fa-address-card"></i>
+              <i class="fas fa-question-circle"></i>
               <p> About</p>   
             </a>
 

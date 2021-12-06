@@ -81,8 +81,10 @@
                                            
                                            
                                             <br>
-                                            <button class="bg-blue-1000 text-white w-full py-1 rounded-lg " type="submit">Submit</button>  
-                                             
+                                            
+                                            <div class="mb-4">
+                                            <button class="bg-blue-1000 text-white w-full  py-1 rounded-lg " type="submit">SUBMIT</button>  
+                                            </div>
                                              
                                         </form>
                                         

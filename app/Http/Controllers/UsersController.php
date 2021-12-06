@@ -21,14 +21,13 @@ class UsersController extends Controller
     public function index()
     {
 
-        return view('admin.users.index', ['users'=> User::withoutTrashed()->paginate(10)]);
-
+        return view('admin.users.index', ['users' => User::withoutTrashed()->paginate(10)]);
     }
 
-    
+
     public function create()
     {
-    
+
         return view('users.create', ['role' => Role::all()]);
     }
 
@@ -36,15 +35,15 @@ class UsersController extends Controller
 
     public function store(StoreUserRequest $request)
     {
-  
+
 
         $user = new User();
-        $user -> name = $request->name;
-        $user -> username = $request->username;
-        $user -> email = $request->email;
-        $user -> password = Hash::make( $request->password); 
-        
-        $user -> role = $request->role;
+        $user->name = $request->name;
+        $user->username = $request->username;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+
+        $user->role = $request->role;
         $user->save();
 
         $notification = array(
@@ -63,40 +62,37 @@ class UsersController extends Controller
 
     public function edit($id)
     {
-   
-
-
-        return view('users.edit', 
-       [
-          'role' => Role::all(),
-          'user'=> User::find($id)
-     ]);
 
 
 
-
-        
+        return view(
+            'users.edit',
+            [
+                'role' => Role::all(),
+                'user' => User::find($id)
+            ]
+        );
     }
 
     public function update(UpdateUserRequest $request, $id)
     {
         $user = User::find($id);
-        $user-> name = $request->input('name');
-        $user-> username = $request->input('username');
-        $user-> email = $request->input('email');
-        $user-> role = $request->input('role');
-        
-
-       $user->save();
-
-       $notification = array(
-        'message' => ' User updated successfully',
-        'alert-type' => 'success'
-    );
-    return redirect()->route('users.index')->with($notification);
+        $user->name = $request->input('name');
+        $user->username = $request->input('username');
+        $user->email = $request->input('email');
+        $user->role = $request->input('role');
 
 
-       // return redirect()->route('users.index');
+        $user->save();
+
+        $notification = array(
+            'message' => ' User updated successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('users.index')->with($notification);
+
+
+        // return redirect()->route('users.index');
     }
 
     public function destroy($id)
@@ -106,29 +102,30 @@ class UsersController extends Controller
         $user->delete();
 
         return redirect()->route('users.index');*/
-   
+
         User::destroy($id);
         $notification = array(
             'message' => ' Account Deleted ',
-            'alert-type' => 'error');
+            'alert-type' => 'error'
+        );
 
         return redirect()->route('users.index')->with($notification);
     }
 
 
-   
-
-    
 
 
 
 
-/***
- * Update status of user
- * @param Integer $user_id
- *  @param Integer $status_code
- *  return success
- */
+
+
+
+    /***
+     * Update status of user
+     * @param Integer $user_id
+     *  @param Integer $status_code
+     *  return success
+     */
 
     public function updatestatus($user_id, $status_code)
     {
@@ -148,47 +145,37 @@ class UsersController extends Controller
             $update_user = User::whereId($user_id)->update([
                 'status' => $status_code
             ]);
-           
 
-            if($update_user){
+
+            if ($update_user) {
                 return redirect()->route('users.index')->with($notificationsuccess);
             }
 
 
             return redirect()->route('users.index')->with($notificationfail);
-
-        }catch (Throwable $th) {
+        } catch (Throwable $th) {
             throw $th;
         }
+    }
 
+    public function Redirect()
+    {
+
+
+        $user = auth()->user()->role == 'admin';
+
+
+
+        if ($user) {
+            return redirect()->route('users.index');
         }
-
-        public function Redirect()
-        {
-
-           
-            $user= auth()->user()->role == 'admin';
-            
+        // or return route('routename');
 
 
-            if($user){
-                return redirect()->route('users.index');
-            }   
-                // or return route('routename');
-            
-        
-            return redirect('dashboard');
-            // or return route('routename');
-                 
-            
-      
-        }
+        return redirect('dashboard');
+        // or return route('routename');
 
 
 
-    
+    }
 }
-
-
-  
-

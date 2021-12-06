@@ -154,7 +154,7 @@
                 <div class="center border-transparent">
                     <label class="text-lg">2 . Delivery Services </label>
                 <div class="form-row">
-                    <label class="text-sm text-center">1- Poor 2- Fair 3-Satisfactory 4- Very Satisfactory 5- Excellent</label>
+                    <label class="text-sm text-center">1- Poor 2- Fair 3-Satisfied 4- Very Satisfied 5- Excellent</label>
                     <table class="table table-stripped table-bordered">
                         <thead>
                             <tr>

@@ -37,9 +37,7 @@ Route::group(['middleware' => [
 
 ]], function () {
 
-    //  Route::get('/dashboard', function () {
-    //      return view('dashboard');
-    //  })->name('dashboard');
+
 
 
     Route::get('/aboutus', function () {
@@ -75,9 +73,7 @@ Route::get('/customer', function () {
 
 
 Route::prefix('createactivity')->group(function () {
-    //   Route::get('/create', function () {
-    //     return view('create');
-    // })->name('create');
+
 
 
     //ROUTES FOR CRUD
@@ -94,9 +90,7 @@ Route::prefix('createactivity')->group(function () {
 });
 
 Route::prefix('createfeedback')->group(function () {
-    //   Route::get('/create', function () {
-    //     return view('create');
-    // })->name('create');
+
 
 
     //ROUTES FOR CRUD FEEDBACK
@@ -108,6 +102,9 @@ Route::prefix('createfeedback')->group(function () {
     Route::get('edit/{id}',  [feedbackController::class, 'edit'])->name('edit.createfeedback');
     Route::get('customer',  [feedbackController::class, 'customer'])->name('customerfeedback');
 });
+
+//Feedback Stats
+Route::get('feedback/stats',  [feedbackController::class, 'index'])->name('feedbackstatistics');
 
 //FEEDBACK FORM
 

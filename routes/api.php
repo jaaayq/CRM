@@ -38,9 +38,7 @@ Route::post('/login', [AuthController::class, 'login']);
 
 
 //Public routes for Activity
-Route::get('/activity', [ActivityControllerApi::class, 'index']);
-Route::get('/activity/search/{activityname}', [ActivityControllerApi::class, 'search']);
-Route::get('/activity/{id}', [ActivityControllerApi::class, 'show']);
+
 
 
 //Protected routes
@@ -60,6 +58,13 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     //Protected routes for feedback
     Route::post('/feedback', [FeedbackControllerApi::class, 'index']);
     Route::get('/feedback/{feedbackactivitycode}', [FeedbackControllerApi::class, 'count']);
+
+
+
+    //Protected routes for activity
+    Route::get('/activity', [ActivityControllerApi::class, 'index']);
+    Route::get('/activity/search/{activityname}', [ActivityControllerApi::class, 'search']);
+    Route::get('/activity/{id}', [ActivityControllerApi::class, 'show']);
 });
 
 //Route::resource('/activity', ActivityControllerApi::class);

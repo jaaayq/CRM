@@ -17,26 +17,30 @@ use Throwable;
 class activityController extends Controller
 {
     //
-    public function create(){
+    public function create()
+    {
 
         return view('createactivityadd');
     }
 
-    public function viewjoin(){
+    public function viewjoin()
+    {
 
-       
+
 
         return view('joinactivity');
     }
 
 
-    public function viewjointest(){
+    public function viewjointest()
+    {
 
         return view('joinactivitytest');
     }
 
 
-    public function viewaboutus(){
+    public function viewaboutus()
+    {
 
         return view('aboutus');
     }
@@ -44,42 +48,33 @@ class activityController extends Controller
 
 
     //functions for customer code
-    public function viewactivity(Request $request){
+    public function viewactivity(Request $request)
+    {
 
 
-    
-
-    $code = $request->input('code');
-    
-
-      if (DB::table('activity1s')->where([
-          ['activitycode', $code],
-          ['activity_status', '1']
-          ])->exists()){
-           
-         return view('joinactivity', compact('code'));
-         
-         
-        
 
 
-     }elseif (DB::table('activity1s')->where([
-        ['activitycode', $code],
-        ['activity_status', '0']
-        ])->exists()){
-
-        return redirect('customer')->with('feedbackmessage', 'FEEDBACK IS DISABLED ');
+        $code = $request->input('code');
 
 
-     }else{
+        if (DB::table('activity1s')->where([
+            ['activitycode', $code],
+            ['activity_status', '1']
+        ])->exists()) {
+
+            return view('joinactivity', compact('code'));
+        } elseif (DB::table('activity1s')->where([
+            ['activitycode', $code],
+            ['activity_status', '0']
+        ])->exists()) {
+
+            return redirect('customer')->with('feedbackmessage', 'FEEDBACK IS DISABLED ');
+        } else {
 
 
-    return redirect('customer')->with('message', 'CODE DOES NOT EXIST');
-            
-        
-            
+            return redirect('customer')->with('message', 'CODE DOES NOT EXIST');
+        }
     }
-}
 
 
 
@@ -88,22 +83,22 @@ class activityController extends Controller
     //FUNCTIONS FOR CREATE AMD STPRE
     public function store(Request $request)
     {
-             $request->validate([
-            'activitydate'=> ['required',new SelectDateRule],
-            'date_finished'=> ['required','after:activitydate',new SelectDateRule],
-            'activitycode'=>'unique:activity1s',
+        $request->validate([
+            'activitydate' => ['required', new SelectDateRule],
+            'date_finished' => ['required', 'after:activitydate', new SelectDateRule],
+            'activitycode' => 'unique:activity1s',
 
         ]);
 
-     
-       
+
+
 
         $data = new activity1;
-        $data -> ActivityName = $request->activityname;
-        $data -> ActivityDate = $request->activitydate;
-        $data -> date_finished = $request->date_finished;
-        $data -> ActivityDescription = $request->activitydescription;
-        $data -> ActivityCode = $request->activitycode;
+        $data->ActivityName = $request->activityname;
+        $data->ActivityDate = $request->activitydate;
+        $data->date_finished = $request->date_finished;
+        $data->ActivityDescription = $request->activitydescription;
+        $data->ActivityCode = $request->activitycode;
         $data->save();
 
         $notification = array(
@@ -111,8 +106,6 @@ class activityController extends Controller
             'alert-type' => 'success'
         );
         return redirect()->route('view.createactivity')->with($notification);
-
-    
     }
 
     //FUNCTIONS FOR VIEW
@@ -124,7 +117,7 @@ class activityController extends Controller
     }
 
 
-//FUNCTIONS FOR DELETE
+    //FUNCTIONS FOR DELETE
     public function delete($id)
     {
         activity1::find($id)->delete();
@@ -134,96 +127,85 @@ class activityController extends Controller
             'alert-type' => 'error'
         );
         return back()->with($notification);
-
     }
 
-      //FUNCTIONS FOR EDIT
-      public function edit($id)
-      {
+    //FUNCTIONS FOR EDIT
+    public function edit($id)
+    {
         $editdata = activity1::where('id', $id)->first();
 
         return view('createactivityadd', compact('editdata'));
+    }
 
-
-      }
-
- //FUNCTIONS FOR UPDATE
-      public function update(Request $request,$id)
-      {
+    //FUNCTIONS FOR UPDATE
+    public function update(Request $request, $id)
+    {
 
         $data = activity1::where('id', $id)->first();
-        $data-> ActivityName = $request->activityname;
-        $data-> ActivityDate = $request->activitydate;
-        $data -> date_finished = $request->date_finished;
-        $data-> ActivityDescription = $request->activitydescription;
-        $data-> ActivityCode = $request->activitycode;
+        $data->ActivityName = $request->activityname;
+        $data->ActivityDate = $request->activitydate;
+        $data->date_finished = $request->date_finished;
+        $data->ActivityDescription = $request->activitydescription;
+        $data->ActivityCode = $request->activitycode;
 
-       $data->save();
-       $notification = array(
-        'message' => 'Activity Updated Successfully',
-        'alert-type' => 'success'
-    );
-    return back()->with($notification);
+        $data->save();
+        $notification = array(
+            'message' => 'Activity Updated Successfully',
+            'alert-type' => 'success'
+        );
+        return back()->with($notification);
+    }
 
-      }
-
-      public function index(Request $request){
+    public function index(Request $request)
+    {
 
         $data = activity1::where([
             ['activitycode', '!=', null],
-            [function($query)use ($request) {
-                if(($code = $request->code)) {
+            [function ($query) use ($request) {
+                if (($code = $request->code)) {
                     $query->orWhere('activitycode', 'LIKE', '%' . $code . '%')->get();
                 }
-
             }]
 
         ])
-                ->orderBy("id", "desc")
-                ->paginate(10);
+            ->orderBy("id", "desc")
+            ->paginate(10);
 
-                return view('data.index', compact('data'))
-                ->with('i', (request()->input('page', 1) -1 )* 5);
+        return view('data.index', compact('data'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
 
+    //update status on feedback
 
-      }
+    public function updateactivitystatus($act_id, $act_status)
+    {
 
-      //update status on feedback
+        $notificationsuccess = array(
+            'message' => ' Activity status updated',
+            'alert-type' => 'success'
+        );
 
-      public function updateactivitystatus($act_id, $act_status)
-      {
-  
-          $notificationsuccess = array(
-              'message' => ' Activity status updated',
-              'alert-type' => 'success'
-          );
-  
-          $notificationfail = array(
-              'message' => ' Activity status update fail',
-              'alert-type' => 'error'
-          );
-  
-          try {
-  
-              $update_act = activity1::whereId($act_id)->update([
-                  'activity_status' => $act_status
-              ]);
-             
-  
-              if($update_act){
-                  return redirect()->route('view.createactivity')->with($notificationsuccess);
-              }
-  
-  
-              return redirect()->route('view.createactivity')->with($notificationfail);
-  
-          }catch (Throwable $th) {
+        $notificationfail = array(
+            'message' => ' Activity status update fail',
+            'alert-type' => 'error'
+        );
 
-              throw $th;
-          }
-  
-          }
+        try {
+
+            $update_act = activity1::whereId($act_id)->update([
+                'activity_status' => $act_status
+            ]);
 
 
+            if ($update_act) {
+                return redirect()->route('view.createactivity')->with($notificationsuccess);
+            }
 
+
+            return redirect()->route('view.createactivity')->with($notificationfail);
+        } catch (Throwable $th) {
+
+            throw $th;
+        }
+    }
 }
