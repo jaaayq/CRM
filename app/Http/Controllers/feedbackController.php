@@ -144,10 +144,11 @@ class feedbackController extends Controller
       ->groupBy('feedbackactivitycode')
       ->having('occurences', '>', 1);
     //$duplicated = $duplicated->toArray();
-    $add = $duplicated->addSelect('t1', 't2', 'AOS1', 'AOS2', 'QOS1', 'QOS2', 'UTM1', 'CTT1', 'RIP1', 'SAT1', 'SAT2')->get();
+    $querydata = $duplicated->addSelect('t1', 't2', 'AOS1', 'AOS2', 'QOS1', 'QOS2', 'UTM1', 'CTT1', 'RIP1', 'SAT1', 'SAT2')->get();
 
 
-    //dd($add);
+
+    //dd($querydata);
 
     $test = DB::table('feedback2s')
       ->select('feedbackactivitycode')
@@ -165,14 +166,16 @@ class feedbackController extends Controller
 
 
 
+
+
     // $results =  $duplicated->merge($columns);
     // $merged = (array) $results;
     // $final = array_merge($merged);
     //  $results = $results->toArray();
     // dd($final);
 
-    $merged = $columns->merge($duplicated);
-    $merged = $merged->toArray();
+    //$merged = $columns->merge($duplicated);
+    //$merged = $merged->toArray();
     //dd($merged);
 
 
@@ -181,10 +184,10 @@ class feedbackController extends Controller
 
     // dd($columns);
 
-    $alldata = feedback2::all()->groupBy('feedbackactivitycode');
+    //$alldata = feedback2::all()->groupBy('feedbackactivitycode');
     //dd($alldata);
 
-    return view('feedbackstatistics', compact('sorted_activity_codes', 'duplicated', 'columns', 'add'));
+    return view('feedbackstatistics', compact('sorted_activity_codes', 'duplicated', 'columns', 'querydata'));
   }
 
 

@@ -5,11 +5,12 @@
           <!-- /.content-header -->
   
   
-  {{--FEEDBACK FORM  LIST BLADE--}}
+  {{--FEEDBACK STATS  LIST BLADE--}}
   
   
           <!-- Main content -->
           <section class="col-md-12">
+            <div class="pl-2 pr-2">
               <div class="card card-primary">
                   <div class="card-header ">
                   <h3 class="card-title font-RO">FEEDBACK STATISTICS</h3>
@@ -42,66 +43,38 @@
                                       
 
 
+                    
+                                      
+                                              @foreach ($querydata as $query )
 
-                                      
-                                      @foreach ($add as $column)
-                                      <tr>
-                                        <td> {{ $column->feedbackactivitycode }} </td>
-                                      <td> {{ $column->occurences }} </td>
-                                      
-                                      <td> {{ $column->t1 }} </td>
-                                      <td> {{ $column->t2 }} </td>
-                                      <td> {{ $column->AOS1 }} </td>
-                                      <td> {{ $column->AOS2 }} </td>
-                                      <td> {{ $column->QOS1 }} </td>
-                                      <td> {{ $column->QOS2 }} </td>
-                                      <td> {{ $column->UTM1 }} </td>
-                                      <td> {{ $column->CTT1 }} </td>
-                                      <td> {{ $column->RIP1 }} </td>
-                                      <td> {{ $column->SAT1 }} </td>
-                                      <td> {{ $column->SAT2 }} </td>
-                                      
-                                     
-                                      
+                                              <tr>                          
 
-                                    </tr>
-                                      @endforeach
+                                              <td> {{ $query->feedbackactivitycode }} </td>
+                                              <td> {{ $query->occurences }} </td> 
+                                              <td> {{ $query->t1 }} </td>
+                                              <td> {{ $query->t2 }} </td>
+                                              <td> {{ $query->AOS1 }} </td>
+                                              <td> {{ $query->AOS2 }} </td>
+                                              <td> {{ $query->QOS1 }} </td>
+                                              <td> {{ $query->QOS2 }} </td>
+                                              <td> {{ $query->UTM1 }} </td>
+                                              <td> {{ $query->CTT1 }} </td>
+                                              <td> {{ $query->RIP1 }} </td>
+                                              <td> {{ $query->SAT1 }} </td>
+                                              <td> {{ $query->SAT2 }} </td>
+
+                                              </tr>
+
+                                              @endforeach
                                         
                                       
-                                      
-                                      
-                                      
-                                      
-                                      
-                                      
-                                      
-                                      
-                                      
-                                   
-                                      
-                                       
-    
-                                      
-                                     
-                                   
 
-
-
-                                      
-                                      
-
-                                   
-
-
-                                     
-                                     
-                                      
-  
-                                  </table>
+                                 </table>
                               </div>
-                          </div>
-                          </div>
-  
+                        </div>
+                    </div>
+              </div>
+              </div>
   
           </section>
   

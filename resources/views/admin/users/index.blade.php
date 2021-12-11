@@ -2,10 +2,63 @@
     <x-slot name="header">
 
 <!-- Main content -->
+ 
+
+@php
+$disablecount = DB::table('users')->where('status', 0)->count();
+$accountcount =  DB::table('users')->where('deleted_at', null)->count();
+@endphp
 
 
+       
+
+        <!-- Main content -->
+        <section class="content">
+          <div class="container-fluid font-RO">
+            <!-- Info boxes -->
+            <div class="row">
+              <!-- /.col -->
+              <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box mb-3">
+                  <span class="info-box-icon bg-success elevation-1"><i class="fas fa-users"></i></span>
+
+                  <div class="info-box-content">
+                    <span class="info-box-text ">Accounts Created</span>
+                    <span class="info-box-number ">{{$accountcount}}</span>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+              </div>
+              <!-- /.col -->
+
+              
+
+              <!-- fix for small devices only -->
+              <div class="clearfix hidden-md-up"></div>
+              <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box mb-3">
+                  <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-user-alt-slash"></i></span>
+    
+                  <div class="info-box-content">
+                    <span class="info-box-text ">Disabled Accounts</span>
+                    <span class="info-box-number ">{{$disablecount}}</span>
+                  </div>
+
+                  
+              
+                  <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+              </div>
+            </div>
+
+          </div>
+
+          
 
 
+         
 
 
 
@@ -13,7 +66,7 @@
 <section class="content">
  
     
-               
+ 
   <div class="container-fluid font-RO">
 
 
@@ -23,6 +76,8 @@
           
 
         <h2 class="float-left" style="font-size: 25px"> Users List  </h2>
+
+        
            
         <a class="btn btn-sm btn-success float-right" href="{{ route('users.create') }}" role="button"> <i class="fas fa-user-plus"></i> ADD</a>
       
@@ -34,15 +89,16 @@
   
           
 
-
-        <div class="card">
+     
+       <!-- <div class="card"> -->
           
             
           
   
          
-            <table class="table">
-                <thead style="font-size:15px;">
+            <table class="table table-bordered  table-hover">
+              
+                <thead class="thead-dark" style="font-size:15px;">
                   <tr>
                   <!--  <th scope="col">Id</th> -->
                     <th scope="col">Role</th>
@@ -52,6 +108,9 @@
                     <th scope="col">Actions</th>
                   </tr>
                 </thead>
+
+
+                
                 <tbody style="font-size:15px">
                     @foreach ($users as $user)
                     <tr>

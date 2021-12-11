@@ -1,4 +1,4 @@
-<x-admin-layout>
+<x-admincreate-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-white-800 leading-light">
             {{ __('Profile') }}

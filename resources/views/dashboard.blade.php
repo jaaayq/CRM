@@ -12,12 +12,10 @@
 @php
 $feedbackcount = DB::table('feedback2s')->count();
 $activitycount =  DB::table('activity1s')->count();
-
-
 @endphp
 
 
-
+       
 
         <!-- Main content -->
         <section class="content">
@@ -60,6 +58,7 @@ $activitycount =  DB::table('activity1s')->count();
 
 
             <!-- BAR CHART -->
+            <div class="pl-2 pr-2 "> 
             <div class="card card-primary">
                 <div class="card-header">
                 <h3 class="card-title font-RO">Chart</h3>
@@ -78,7 +77,7 @@ $activitycount =  DB::table('activity1s')->count();
        
 
                               <!-- Chart's container -->
-                <div id="chart" style="height: 300px;"></div>
+                <div id="chart" style="height: 300px;  "></div>
 
              
                     
@@ -110,7 +109,7 @@ $activitycount =  DB::table('activity1s')->count();
                 </div>
                 </div>
                 <!-- /.card-body -->
-            </div>
+              </div>
 
              <!-- Charting library -->
              <script src="https://unpkg.com/chart.js@^2.9.3/dist/Chart.min.js"></script>

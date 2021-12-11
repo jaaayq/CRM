@@ -91,6 +91,8 @@
                      </div>
          
                </div>
+
+            
          
              <!--  <div class="user-panel mt-3 pb-3 mb-3 d-flex">
          
@@ -114,17 +116,16 @@
                     
           
          
-         
-                
-         
-         
-                  {{-- <li class="nav-item {{ ($prefix=='viewactivity')?'menu-open':''}}">
-                     <a href="{{ route('view') }}" class="nav-link {{ ($route=='view')?'active':'' }}">
-                       <p>
-                         View Activity
-                       </p>
-                     </a>
-                   </li>--}}
+                    <li class="nav-item {{ ($prefix=='profile.show')?'menu-open':''}}">
+
+                      <a href="{{ route('profile.show') }}" class="nav-link font-RO {{ ($route=='joinactivityview')?'active':'' }}">
+                          <i class="fas fa-cogs"></i>
+                        <p>Settings</p>  
+                         
+                      </a>
+          
+                    </li>
+  
          
              </div>
              <!-- /.sidebar -->

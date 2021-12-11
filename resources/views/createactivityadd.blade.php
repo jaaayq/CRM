@@ -46,7 +46,7 @@
             
           @endif
 
-
+          <div class="pl-2 pr-2">
             <div class="card card-primary">
                 <div class="card-header ">
                 <h3 class="card-title font-RO">
@@ -114,7 +114,7 @@
                         </form>
                         </div>
                         </div>
-
+                      </div>
 
         </section>
 
