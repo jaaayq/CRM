@@ -152,6 +152,12 @@ class feedbackController extends Controller
     // ->selectRaw('feedbackactivitycode, avg(t1), avg(t2)')
     //  ->get();
 
+
+
+
+
+
+    //GET SUM OF DIFFERENT DATA AND COUNT OF ACTIVITY CODE GROUPBY ACTIVITY CODE
     $querydata = DB::table('feedback2s')
       ->select('feedbackactivitycode', DB::raw('count(`feedbackactivitycode`) as occurences'))
       ->groupBy('feedbackactivitycode')

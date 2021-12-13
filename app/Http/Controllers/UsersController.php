@@ -18,13 +18,16 @@ use Throwable;
 
 class UsersController extends Controller
 {
+
+
+    //ADMIN PAGE 
     public function index()
     {
 
         return view('admin.users.index', ['users' => User::withoutTrashed()->paginate(10)]);
     }
 
-
+    //CREATE FUNCTION
     public function create()
     {
 
@@ -32,7 +35,7 @@ class UsersController extends Controller
     }
 
 
-
+    //STORE FUNCTION
     public function store(StoreUserRequest $request)
     {
 
@@ -60,6 +63,8 @@ class UsersController extends Controller
         return view('users.show', compact('user'));*/
     }
 
+
+    //EDIT FUNCTION
     public function edit($id)
     {
 
@@ -73,7 +78,7 @@ class UsersController extends Controller
             ]
         );
     }
-
+    //UPDATE FUNCTION
     public function update(UpdateUserRequest $request, $id)
     {
         $user = User::find($id);
@@ -95,6 +100,7 @@ class UsersController extends Controller
         // return redirect()->route('users.index');
     }
 
+    //DELETE FUNCTION
     public function destroy($id)
     {
         /* abort_if(Gate::denies('user_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
@@ -158,6 +164,8 @@ class UsersController extends Controller
         }
     }
 
+
+    //REDIRECT USERS DEPENDING ON USERS ON ACCOUNT SETTINGS
     public function Redirect()
     {
 

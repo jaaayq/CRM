@@ -9,24 +9,20 @@ use App\Models\User;
 
 class HomeController extends Controller
 {
-    public function index(){
 
-        $role=Auth::user()->role;
+    //REDIRECT AFTER LOGIN DEPENDING ON ROLES
+    public function index()
+    {
+
+        $role = Auth::user()->role;
         $users = User::all();
 
-        if ($role =='admin')
-        {
-            return view('admin.users.index', ['users'=> User::paginate(10)]);
-          
-           // return view ('users.create');
-        }
-        else
-        {
-            return view ('dashboard');
-        }
-       
+        if ($role == 'admin') {
+            return view('admin.users.index', ['users' => User::paginate(10)]);
 
-       
-
+            // return view ('users.create');
+        } else {
+            return view('dashboard');
+        }
     }
 }

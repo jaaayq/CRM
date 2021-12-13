@@ -47,7 +47,7 @@ class activityController extends Controller
 
 
 
-    //functions for customer code
+    //FUNCTIONS FOR CUSTOMER CODE
     public function viewactivity(Request $request)
     {
 
