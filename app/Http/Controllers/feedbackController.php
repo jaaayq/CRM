@@ -144,11 +144,39 @@ class feedbackController extends Controller
       ->groupBy('feedbackactivitycode')
       ->having('occurences', '>', 1);
     //$duplicated = $duplicated->toArray();
-    $querydata = $duplicated->addSelect('t1', 't2', 'AOS1', 'AOS2', 'QOS1', 'QOS2', 'UTM1', 'CTT1', 'RIP1', 'SAT1', 'SAT2')->get();
+    //  $querydata = $duplicated->addSelect(DB::raw('AVG(t1) A, avg(t2) A, avg(AOS1) avgstaff, avg(AOS2) avgstaff, avg(QOS1) avgquality, avg(QOS2) avgquality, avg(UTM1) avgquality, avg(CTT1) avgquality, avg(RIP1) avgquality, avg(SAT1) avgbitch, avg(SAT2) avgrec'))
+    //  ->get();
+
+    $result = DB::table('feedback2s')
+      ->groupBy('feedbackactivitycode')
+      ->selectRaw('feedbackactivitycode, avg(t1), avg(t2)')
+      ->get();
+
+    $querydata = DB::table('feedback2s')
+      ->select('feedbackactivitycode', DB::raw('count(`feedbackactivitycode`) as occurences'))
+      ->groupBy('feedbackactivitycode')
+      ->having('occurences', '>', 1);
+
+    $queryfinal = $querydata->addSelect([
+      DB::raw('SUM(t1 + t2) as time'),
+
+      DB::raw('SUM(AOS1 + AOS2) as staff'),
+      DB::raw('SUM(QOS1 + QOS2 + UTM1 + CTT1 + RIP1) as quality'),
+
+      DB::raw('SUM(SAT1) as satisfaction'),
+      DB::raw('SUM(SAT2) as recommend'),
 
 
 
-    //dd($querydata);
+    ])
+
+
+      ->groupBy('feedbackactivitycode')
+      ->get();
+
+
+
+    //dd($queryfinal);
 
     $test = DB::table('feedback2s')
       ->select('feedbackactivitycode')
@@ -187,7 +215,7 @@ class feedbackController extends Controller
     //$alldata = feedback2::all()->groupBy('feedbackactivitycode');
     //dd($alldata);
 
-    return view('feedbackstatistics', compact('sorted_activity_codes', 'duplicated', 'columns', 'querydata'));
+    return view('feedbackstatistics', compact('sorted_activity_codes', 'duplicated', 'columns', 'querydata', 'queryfinal'));
   }
 
 

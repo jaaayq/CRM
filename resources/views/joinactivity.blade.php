@@ -277,9 +277,9 @@
                                 <th class="text-sm">Considering the services availed, how likely are you to recommend DOST XI</th>
                                 <th style="font-size: 15px"> <input type="radio" id="SAT201" name="SAT2" value="1"></th>
                                 <th style="font-size: 15px"> <input type="radio" id="SAT202" name="SAT2" value="2"></th>
-                                <th style="font-size: 15px"> <input type="radio" id="SAT203" name="SAT2" value="2"></th>
-                                <th style="font-size: 15px"> <input type="radio" id="SAT204" name="SAT2" value="2"></th>
-                                <th style="font-size: 15px"> <input type="radio" id="SAT205" name="SAT2" value="2"></th>
+                                <th style="font-size: 15px"> <input type="radio" id="SAT203" name="SAT2" value="3"></th>
+                                <th style="font-size: 15px"> <input type="radio" id="SAT204" name="SAT2" value="4"></th>
+                                <th style="font-size: 15px"> <input type="radio" id="SAT205" name="SAT2" value="5"></th>
                             </tr>
 
                     </table>

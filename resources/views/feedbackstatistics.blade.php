@@ -25,17 +25,12 @@
                                           <tr>
                                               <th style="font-size: 12px">Activity Code</th>
                                               <th style="font-size: 12px">Feedback Count</th>
-                                              <th style="font-size: 12px">T1</th>
-                                              <th style="font-size: 12px">T2</th>
-                                              <th style="font-size: 12px">AOS1</th>
-                                              <th style="font-size: 12px">AOS2</th>
-                                              <th style="font-size: 12px">QOS1</th>
-                                              <th style="font-size: 12px">QOS2</th>
-                                              <th style="font-size: 12px">UTM1</th>
-                                              <th style="font-size: 12px">CTT1</th>
-                                              <th style="font-size: 12px">RIP1</th>
-                                              <th style="font-size: 12px">SAT1</th>
-                                              <th style="font-size: 12px">SAT2</th>
+                                              <th style="font-size: 12px">Timelesness</th>
+                                              <th style="font-size: 12px">Staff</th>
+                                              <th style="font-size: 12px">Quality</th>
+                                              <th style="font-size: 12px">Satisfaction</th>
+                                              <th style="font-size: 12px">Recommendation</th>
+                                          
 
                                           </tr>
                                       </thead>
@@ -45,23 +40,19 @@
 
                     
                                       
-                                              @foreach ($querydata as $query )
+                                              @foreach ($queryfinal as $query )
 
                                               <tr>                          
 
                                               <td> {{ $query->feedbackactivitycode }} </td>
                                               <td> {{ $query->occurences }} </td> 
-                                              <td> {{ $query->t1 }} </td>
-                                              <td> {{ $query->t2 }} </td>
-                                              <td> {{ $query->AOS1 }} </td>
-                                              <td> {{ $query->AOS2 }} </td>
-                                              <td> {{ $query->QOS1 }} </td>
-                                              <td> {{ $query->QOS2 }} </td>
-                                              <td> {{ $query->UTM1 }} </td>
-                                              <td> {{ $query->CTT1 }} </td>
-                                              <td> {{ $query->RIP1 }} </td>
-                                              <td> {{ $query->SAT1 }} </td>
-                                              <td> {{ $query->SAT2 }} </td>
+                                              <td> {{ round($query->time / $query->occurences / 2 )}} </td>
+                                              <td> {{ round($query->staff / $query->occurences / 2) }} </td>
+                                              <td> {{ round($query->quality / $query->occurences / 5 ) }} </td>
+                                              <td> {{ round($query->satisfaction / $query->occurences / 1) }} </td>
+                                              <td> {{ round($query->recommend / $query->occurences  / 1 ) }} </td>
+                                            
+                                        
 
                                               </tr>
 
