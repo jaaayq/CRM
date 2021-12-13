@@ -45,6 +45,7 @@
                    <h6>12.) Soft Deletes</h6>
                    <h6>13.) Notifications on all CRUD Operations</h6>
                    <h6>14.) Validations</h6>
+                   <h6>15.) Feedback Stats</h6>
 
 
                    <br>
