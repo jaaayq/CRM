@@ -46,11 +46,11 @@
 
                                               <td> {{ $query->feedbackactivitycode }} </td>
                                               <td> {{ $query->occurences }} </td> 
-                                              <td> {{ round($query->time / $query->occurences / 2 )}} </td>
-                                              <td> {{ round($query->staff / $query->occurences / 2) }} </td>
-                                              <td> {{ round($query->quality / $query->occurences / 5 ) }} </td>
-                                              <td> {{ round($query->satisfaction / $query->occurences / 1) }} </td>
-                                              <td> {{ round($query->recommend / $query->occurences  / 1 ) }} </td>
+                                              <td> {{ number_format($query->time / $query->occurences / 2 )}} </td>
+                                              <td> {{ number_format($query->staff / $query->occurences / 2) }} </td>
+                                              <td> {{ number_format($query->quality / $query->occurences / 5 ) }} </td>
+                                              <td> {{ number_format($query->satisfaction / $query->occurences / 1) }} </td>
+                                              <td> {{ number_format($query->recommend / $query->occurences  / 1 ) }} </td>
                                             
                                         
 

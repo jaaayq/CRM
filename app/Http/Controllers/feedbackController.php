@@ -80,10 +80,10 @@ class feedbackController extends Controller
     //$votes = DB::table('feedback2s')->where('QOS1', 1)->count();
 
 
-    $columns =  DB::table('feedback2s')
-      ->select('t1', 't2', 'AOS1', 'AOS2', 'QOS1', 'QOS2', 'UTM1', 'CTT1', 'RIP1', 'SAT1', 'SAT2')
-      ->groupBy('feedbackactivitycode')
-      ->get();
+    // $columns =  DB::table('feedback2s')
+    //  ->select('t1', 't2', 'AOS1', 'AOS2', 'QOS1', 'QOS2', 'UTM1', 'CTT1', 'RIP1', 'SAT1', 'SAT2')
+    //  ->groupBy('feedbackactivitycode')
+    //  ->get();
     // $columns = $columns->toArray();
 
 
@@ -124,12 +124,12 @@ class feedbackController extends Controller
 
 
     //$num1 = feedback2::where('t1', 't2', 'AOS1', 'AOS2', 'QOS1', 'QOS2', 'UTM1', 'CTT1', 'RIP1', 'SAT1', 'SAT2', '=', '1')->count();
-    $num1 = DB::table('feedback2s')
-      ->select(
-        'feedback2s.*',
-        DB::raw('count(1) as poorsum')
-      )
-      ->get();
+    //  $num1 = DB::table('feedback2s')
+    //   ->select(
+    //     'feedback2s.*',
+    //   DB::raw('count(1) as poorsum')
+    //   )
+    //   ->get();
 
 
 
@@ -139,18 +139,18 @@ class feedbackController extends Controller
 
 
 
-    $duplicated = DB::table('feedback2s')
-      ->select('feedbackactivitycode', DB::raw('count(`feedbackactivitycode`) as occurences'))
-      ->groupBy('feedbackactivitycode')
-      ->having('occurences', '>', 1);
+    //  $duplicated = DB::table('feedback2s')
+    //  ->select('feedbackactivitycode', DB::raw('count(`feedbackactivitycode`) as occurences'))
+    //  ->groupBy('feedbackactivitycode')
+    //  ->having('occurences', '>', 1);
     //$duplicated = $duplicated->toArray();
     //  $querydata = $duplicated->addSelect(DB::raw('AVG(t1) A, avg(t2) A, avg(AOS1) avgstaff, avg(AOS2) avgstaff, avg(QOS1) avgquality, avg(QOS2) avgquality, avg(UTM1) avgquality, avg(CTT1) avgquality, avg(RIP1) avgquality, avg(SAT1) avgbitch, avg(SAT2) avgrec'))
     //  ->get();
 
-    $result = DB::table('feedback2s')
-      ->groupBy('feedbackactivitycode')
-      ->selectRaw('feedbackactivitycode, avg(t1), avg(t2)')
-      ->get();
+    //   $result = DB::table('feedback2s')
+    //  ->groupBy('feedbackactivitycode')
+    // ->selectRaw('feedbackactivitycode, avg(t1), avg(t2)')
+    //  ->get();
 
     $querydata = DB::table('feedback2s')
       ->select('feedbackactivitycode', DB::raw('count(`feedbackactivitycode`) as occurences'))
@@ -178,19 +178,19 @@ class feedbackController extends Controller
 
     //dd($queryfinal);
 
-    $test = DB::table('feedback2s')
-      ->select('feedbackactivitycode')
-      ->groupBy('feedbackactivitycode')
+    //   $test = DB::table('feedback2s')
+    //   ->select('feedbackactivitycode')
+    //->groupBy('feedbackactivitycode')
 
 
-      ->get();
+    //    ->get();
     //dd($test);
 
 
-    $sorted_activity_codes = DB::table('feedback2s')
-      ->select('t1', 't2', 'AOS1', 'AOS2', 'QOS1', 'QOS2', 'UTM1', 'CTT1', 'RIP1', 'SAT1', 'SAT2')
-      ->groupBy('feedbackactivitycode')
-      ->get();
+    //  $sorted_activity_codes = DB::table('feedback2s')
+    //    ->select('t1', 't2', 'AOS1', 'AOS2', 'QOS1', 'QOS2', 'UTM1', 'CTT1', 'RIP1', 'SAT1', 'SAT2')
+    //   ->groupBy('feedbackactivitycode')
+    //   ->get();
 
 
 
@@ -215,7 +215,7 @@ class feedbackController extends Controller
     //$alldata = feedback2::all()->groupBy('feedbackactivitycode');
     //dd($alldata);
 
-    return view('feedbackstatistics', compact('sorted_activity_codes', 'duplicated', 'columns', 'querydata', 'queryfinal'));
+    return view('feedbackstatistics', compact('queryfinal'));
   }
 
 
