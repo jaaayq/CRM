@@ -31,21 +31,34 @@
                    <h6> -The system is able to create an activity and getting the feedback from the customer</h6>
                    <br>
                    <h5> RESPONSIVE</h5>
-                   <h6>1.) Create Activity with Crud Opertations</h6>
-                   <h6>2.) FeedBack Form</h6>
-                   <h6>3.) Login and register</h6>
+                   
+                   <h5> PREVIOUS</h5>
+                   
+                   <h6>1.) Create Activity</h6>
+                   <h6>2.) Login Register</h6>
+                   <h6>3.)Feedback log</h6>
+                   <h6>4.)Create Feedback form</h6>
+                   <h6>5.)Notifications</h6>
+                   
+                   <h5>UPDATE</h5>
+
+                   <h6>2.) (UPDATED) FeedBack Form</h6>
+                   <h6>3.) (UPDATED)Login and register</h6>
                    <h6>4.) Username</h6>
                    <h6>5.) Pie Chart</h6>
                    <h6>6.) Assigning roles</h6>
                    <h6>7.) Customer Code</h6>
-                   <h6>8.) Account availability</h6>
-                   <h6>9.) Feedback availability</h6>
+                   <h6>8.) Account status</h6>
+                   <h6>9.) Feedback status</h6>
                    <h6>10.) Admin Crud</h6>
                    <h6>11.) API Crud</h6>
                    <h6>12.) Soft Deletes</h6>
-                   <h6>13.) Notifications on all CRUD Operations</h6>
+                   <h6>13.)(UPDATED) Notifications</h6>
                    <h6>14.) Validations</h6>
                    <h6>15.) Feedback Stats</h6>
+                   <h6>16.) (UPDATED) Profile Settings</h6>
+                   <h6>16.) (UPDATED) Create Activity</h6>
+
 
 
                    <br>
