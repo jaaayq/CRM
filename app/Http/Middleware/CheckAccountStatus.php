@@ -18,15 +18,15 @@ class CheckAccountStatus
     public function handle(Request $request, Closure $next)
     {
 
-        if(auth()->check() && (auth()->user()->status == 0)){
+        if (auth()->check() && (auth()->user()->status == 0)) {
             Auth::logout();
             $request->session()->invalidate();
             $request->session()->regenerateToken();
 
 
-            return redirect()->route('login')->with('error', 'Your account is deactivated. Please contact your administrator!');
+            return redirect()->route('login')->with('error', 'Your account is disabled. Please contact your administrator!');
         }
-        
+
 
 
 

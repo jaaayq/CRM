@@ -1,7 +1,7 @@
 <nav x-data="{ open: false }" class="bg-gray-1100 border-b  border-gray-1100">
     <!-- Primary Navigation Menu -->
 
-
+   
 
 {{--JETS STREAM MAIN NAVIGATION  BLADE--}}
 
@@ -92,6 +92,7 @@
                 @endif
 
                 <!-- Settings Dropdown -->
+               
                 <div class="ml-3 relative">
                     <x-jet-dropdown align="right" width="48">
                         <x-slot name="trigger">
@@ -144,6 +145,7 @@
                     </x-jet-dropdown>
                 </div>
             </div>
+ 
 
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center sm:hidden">

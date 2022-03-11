@@ -153,7 +153,7 @@ class activityController extends Controller
             'message' => 'Activity Updated Successfully',
             'alert-type' => 'success'
         );
-        return back()->with($notification);
+        return redirect()->route('view.createactivity')->with($notification);
     }
 
     public function index(Request $request)
